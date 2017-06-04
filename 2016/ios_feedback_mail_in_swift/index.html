@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          用 Swift 写一个发送邮件的 iOS 用户反馈 - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2016/ios_feedback_mail_in_swift/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/medium_6KfyHWAyk2O9CgdzECaeI3R-7mo2NMBpGCUNYHr6JsA%20%E6%8B%B7%E8%B4%9D.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                          <a class="tag" href="/tags/#Swift" title="Swift">Swift</a>
+                        
+                    </div>
+                    <h1>用 Swift 写一个发送邮件的 iOS 用户反馈</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2016-07-12
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>为了接收用户反馈，很多 iOS 应用都会在设置页面中，加入发送邮件功能——尤其当应用是由个人开发者开发时。当然 iOS 中邮件的发送方式有很多种，有体验相对较差 <code>openURL</code> 跳转方式，也有调用其他第三方库等办法。</p>
+<p>不过较常用且方便的，还是如下图（应用为 <a href="https://itunes.apple.com/cn/app/chao-xi-mei-hao-fan-jia-zhong/id1077776989?mt=8" target="_blank" rel="external"> 潮汐 </a>），调用系统的<code>MFMailComposeViewController</code> 视图在应用内完成邮件发送，并返回应用。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-6f1bdc7999737bf4.gif?imageMogr2/auto-orient/strip" alt="chaoxi_feedback"></p>
+<p>下面就详解下这种方式的实现步骤。</p>
+<p>##1 建立静态列表 <br> 首先，拖一个 <code>Table View Controller</code> 到<code>main.storyboard</code>中，并选中 <code>Table View</code> 在右侧属性面板中将其设置为静态列表<code>Static Cells</code>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-39b9fa6076c20fb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="static_cells"></p>
+<p>为了演示方便这里就先创建一个 <code>Section</code>，其中有两行<code>Cell</code>。两个<code>Cell</code> 的 Style 都设置为 Basic，并将 <code>Title</code> 修改如下。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-b970d5c6faecd0fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="table_view_cel"></p>
+<p>下一步是建立这个 <code>Table View</code> 的<code>Controller</code>。新建一个 <code>Cocoa Touch Class</code> 文件，并选择 Subclass of <code>UITableViewController</code>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-0e0c093a0f9d5694.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="table_view_cel"></p>
+<p>接着在右边工具栏面板中为其设置好 Custom Class。由于这里暂时用不到这个 <code>UITableViewController</code> 类里的内容，可以把他们都注释掉或删掉。接着在其中重写一个 <code>tableView</code> 点选的函数：</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">override</span> <span class="function"><span class="keyword">func</span> <span class="title">tableView</span><span class="params">(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)</span></span>&#123;</div><div class="line"></div><div class="line"> <span class="keyword">if</span> indexPath.section == <span class="number">0</span> &amp;&amp; indexPath.row == <span class="number">0</span> &#123;</div><div class="line">  <span class="built_in">print</span>(<span class="string">"给应用评分"</span>)</div><div class="line"> &#125;</div><div class="line">  </div><div class="line"> <span class="keyword">if</span> indexPath.section == <span class="number">0</span> &amp;&amp; indexPath.row == <span class="number">1</span> &#123;</div><div class="line">  <span class="built_in">print</span>(<span class="string">"意见反馈"</span>)</div><div class="line"> &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>在模拟器中运行，点按 Cell，检查 output 区中 <code>print</code> 的内容是否正常，然后就可以进入下一步。</p>
+<p>##2 MFMailComposeViewController</p>
+<p>处理完 <code>UITableViewController</code> 以后，就可以开始调用邮件视图了。不过先不急着写代码，首先需要导入框架<code>MessageUI.framework</code>。在项目设置 Build Phases 的 Link Binary With Libraries 中添加<code>MessageUI.framework</code>。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-5ace18cc1f8d27a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="messageui"></p>
+<p>然后在 Controller 里导入头文件 <code>import MessageUI</code>。并给 Controller 加上<code>MFMailComposeViewControllerDelegate</code> 协议。</p>
+<p>上述步骤搞定后，就可以愉快地写代码了。首先先写个函数，来配置发邮件的视窗。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">configuredMailComposeViewController</span><span class="params">()</span></span> -&gt; <span class="type">MFMailComposeViewController</span> &#123;</div><div class="line">    </div><div class="line"> <span class="keyword">let</span> mailComposeVC = <span class="type">MFMailComposeViewController</span>()</div><div class="line"> mailComposeVC.mailComposeDelegate = <span class="keyword">self</span></div><div class="line">        </div><div class="line"> <span class="comment">// 设置邮件地址、主题及正文</span></div><div class="line"> mailComposeVC.setToRecipients([<span class="string">"&lt; 你的邮箱地址 &gt;"</span>])</div><div class="line"> mailComposeVC.setSubject(<span class="string">"&lt; 邮件主题 &gt;"</span>)</div><div class="line"> mailComposeVC.setMessageBody(<span class="string">"&lt; 邮件正文 &gt;"</span>, isHTML: <span class="literal">false</span>)</div><div class="line">        </div><div class="line"> <span class="keyword">return</span> mailComposeVC</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>鉴于这种发送邮件的方式，要求用户已经在设备上至少添加有一个邮箱，所以对没有设置邮箱的用户，还应予以提示。因此这里再写一个函数，来配置针对未设置邮箱用户的弹窗提醒。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">showSendMailErrorAlert</span><span class="params">()</span></span> &#123;</div><div class="line"></div><div class="line"> <span class="keyword">let</span> sendMailErrorAlert = <span class="type">UIAlertController</span>(title: <span class="string">"无法发送邮件"</span>, message: <span class="string">"您的设备尚未设置邮箱，请在“邮件”应用中设置后再尝试发送。"</span>, preferredStyle: .<span class="type">Alert</span>)</div><div class="line"> sendMailErrorAlert.addAction(<span class="type">UIAlertAction</span>(title: <span class="string">"确定"</span>, style: .<span class="type">Default</span>) &#123; <span class="number">_</span> <span class="keyword">in</span> &#125;)</div><div class="line"> <span class="keyword">self</span>.presentViewController(sendMailErrorAlert, animated: <span class="literal">true</span>)&#123;&#125;</div><div class="line"> </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>搞定这俩函数后，就可以在之前的 <code>tableView</code> 函数中调用两者了。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> indexPath.section == <span class="number">0</span> &amp;&amp; indexPath.row == <span class="number">1</span> &#123;</div><div class="line"> <span class="built_in">print</span>(<span class="string">"意见反馈"</span>)</div><div class="line">            </div><div class="line"> <span class="keyword">if</span> <span class="type">MFMailComposeViewController</span>.canSendMail() &#123;</div><div class="line">  <span class="comment">// 注意这个实例要写在 if block 里，否则无法发送邮件时会出现两次提示弹窗（一次是系统的）</span></div><div class="line">  <span class="keyword">let</span> mailComposeViewController = configuredMailComposeViewController()</div><div class="line">  <span class="keyword">self</span>.presentViewController(mailComposeViewController, animated: <span class="literal">true</span>, completion: <span class="literal">nil</span>)</div><div class="line"> &#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="keyword">self</span>.showSendMailErrorAlert()</div><div class="line"> &#125;</div><div class="line">            </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>最后，写上 <code>dismiss</code> 邮件视窗的函数，就大功告成了。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">func</span> <span class="title">mailComposeController</span><span class="params">(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?)</span></span> &#123;</div><div class="line">        </div><div class="line"> <span class="keyword">switch</span> result.rawValue &#123;</div><div class="line"> <span class="keyword">case</span> <span class="type">MFMailComposeResultCancelled</span>.rawValue:</div><div class="line">  <span class="built_in">print</span>(<span class="string">"取消发送"</span>)</div><div class="line"> <span class="keyword">case</span> <span class="type">MFMailComposeResultSent</span>.rawValue:</div><div class="line">  <span class="built_in">print</span>(<span class="string">"发送成功"</span>)</div><div class="line"> <span class="keyword">default</span>:</div><div class="line">  <span class="keyword">break</span></div><div class="line"> &#125;   </div><div class="line"> <span class="keyword">self</span>.dismissViewControllerAnimated(<span class="literal">true</span>, completion: <span class="literal">nil</span>)</div><div class="line">        </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>##3 加入设备及应用信息</p>
+<p>为了获得更加准确的反馈信息，可以在邮件正文里加入反馈者的设备及应用信息。那怎样使用 swift 获得设备信息呢？可以如下通过 <code>UIDevice</code> 取得。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 获取设备名称</span></div><div class="line"><span class="keyword">let</span> deviceName = <span class="type">UIDevice</span>.currentDevice().name</div><div class="line"><span class="comment">// 获取系统版本号</span></div><div class="line"><span class="keyword">let</span> systemVersion = <span class="type">UIDevice</span>.currentDevice().systemVersion</div><div class="line"><span class="comment">// 获取设备的型号</span></div><div class="line"><span class="keyword">let</span> deviceModel = <span class="type">UIDevice</span>.currentDevice().model</div><div class="line"><span class="comment">// 获取设备唯一标识符</span></div><div class="line"><span class="keyword">let</span> deviceUUID = <span class="type">UIDevice</span>.currentDevice().identifierForVendor?.<span class="type">UUIDString</span></div></pre></td></tr></table></figure>
+<p>这里的设备型号 <code>deviceModel</code> 只能获知设备的简单区分（如是 iPhone 还是 iPad），如果需要详细的 iOS 设备信息，还需要写一个 <code>UIDevice</code> 的扩展。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">extension</span> <span class="title">UIDevice</span> </span>&#123;</div><div class="line"></div><div class="line">    <span class="keyword">var</span> modelName: <span class="type">String</span> &#123;</div><div class="line">        <span class="keyword">var</span> systemInfo = utsname()</div><div class="line">        uname(&amp;systemInfo)</div><div class="line">        <span class="keyword">let</span> machineMirror = <span class="type">Mirror</span>(reflecting: systemInfo.machine)</div><div class="line">        <span class="keyword">let</span> identifier = machineMirror.children.<span class="built_in">reduce</span>(<span class="string">""</span>) &#123; identifier, element <span class="keyword">in</span></div><div class="line">            <span class="keyword">guard</span> <span class="keyword">let</span> value = element.value <span class="keyword">as</span>? <span class="type">Int8</span> <span class="keyword">where</span> value != <span class="number">0</span> <span class="keyword">else</span> &#123; <span class="keyword">return</span> identifier &#125;</div><div class="line">            <span class="keyword">return</span> identifier + <span class="type">String</span>(<span class="type">UnicodeScalar</span>(<span class="type">UInt8</span>(value)))</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">switch</span> identifier &#123;</div><div class="line">        <span class="keyword">case</span> <span class="string">"iPod5,1"</span>:                                 <span class="keyword">return</span> <span class="string">"iPod Touch 5"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPod7,1"</span>:                                 <span class="keyword">return</span> <span class="string">"iPod Touch 6"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone3,1"</span>, <span class="string">"iPhone3,2"</span>, <span class="string">"iPhone3,3"</span>:     <span class="keyword">return</span> <span class="string">"iPhone 4"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone4,1"</span>:                               <span class="keyword">return</span> <span class="string">"iPhone 4s"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone5,1"</span>, <span class="string">"iPhone5,2"</span>:                  <span class="keyword">return</span> <span class="string">"iPhone 5"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone5,3"</span>, <span class="string">"iPhone5,4"</span>:                  <span class="keyword">return</span> <span class="string">"iPhone 5c"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone6,1"</span>, <span class="string">"iPhone6,2"</span>:                  <span class="keyword">return</span> <span class="string">"iPhone 5s"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone7,2"</span>:                               <span class="keyword">return</span> <span class="string">"iPhone 6"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone7,1"</span>:                               <span class="keyword">return</span> <span class="string">"iPhone 6 Plus"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone8,1"</span>:                               <span class="keyword">return</span> <span class="string">"iPhone 6s"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPhone8,2"</span>:                               <span class="keyword">return</span> <span class="string">"iPhone 6s Plus"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad2,1"</span>, <span class="string">"iPad2,2"</span>, <span class="string">"iPad2,3"</span>, <span class="string">"iPad2,4"</span>:<span class="keyword">return</span> <span class="string">"iPad 2"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad3,1"</span>, <span class="string">"iPad3,2"</span>, <span class="string">"iPad3,3"</span>:           <span class="keyword">return</span> <span class="string">"iPad 3"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad3,4"</span>, <span class="string">"iPad3,5"</span>, <span class="string">"iPad3,6"</span>:           <span class="keyword">return</span> <span class="string">"iPad 4"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad4,1"</span>, <span class="string">"iPad4,2"</span>, <span class="string">"iPad4,3"</span>:           <span class="keyword">return</span> <span class="string">"iPad Air"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad5,3"</span>, <span class="string">"iPad5,4"</span>:                      <span class="keyword">return</span> <span class="string">"iPad Air 2"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad2,5"</span>, <span class="string">"iPad2,6"</span>, <span class="string">"iPad2,7"</span>:           <span class="keyword">return</span> <span class="string">"iPad Mini"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad4,4"</span>, <span class="string">"iPad4,5"</span>, <span class="string">"iPad4,6"</span>:           <span class="keyword">return</span> <span class="string">"iPad Mini 2"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad4,7"</span>, <span class="string">"iPad4,8"</span>, <span class="string">"iPad4,9"</span>:           <span class="keyword">return</span> <span class="string">"iPad Mini 3"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad5,1"</span>, <span class="string">"iPad5,2"</span>:                      <span class="keyword">return</span> <span class="string">"iPad Mini 4"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"iPad6,7"</span>, <span class="string">"iPad6,8"</span>:                      <span class="keyword">return</span> <span class="string">"iPad Pro"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"AppleTV5,3"</span>:                              <span class="keyword">return</span> <span class="string">"Apple TV"</span></div><div class="line">        <span class="keyword">case</span> <span class="string">"i386"</span>, <span class="string">"x86_64"</span>:                          <span class="keyword">return</span> <span class="string">"Simulator"</span></div><div class="line">        <span class="keyword">default</span>:                                        <span class="keyword">return</span> identifier</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 调用</span></div><div class="line"><span class="keyword">let</span> modelName = <span class="type">UIDevice</span>.currentDevice().modelName</div></pre></td></tr></table></figure>
+<p>获取这些设备信息后，就可以在邮件正文中加入它们了，比如:</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">mailComposeVC.setMessageBody(<span class="string">"\\\\n\\\\n\\\\n 系统版本：\\\\(systemVersion)\\\\n 设备型号：\\\\(modelName)"</span>, isHTML: <span class="literal">false</span>)</div></pre></td></tr></table></figure>
+<p>同理，也可以获得应用的相关信息。</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> infoDic = <span class="type">NSBundle</span>.mainBundle().infoDictionary</div><div class="line"></div><div class="line"><span class="comment">// 获取 App 的版本号</span></div><div class="line"><span class="keyword">let</span> appVersion = infoDic?[<span class="string">"CFBundleShortVersionString"</span>]</div><div class="line"><span class="comment">// 获取 App 的 build 版本</span></div><div class="line"><span class="keyword">let</span> appBuildVersion = infoDic?[<span class="string">"CFBundleVersion"</span>]</div><div class="line"><span class="comment">// 获取 App 的名称</span></div><div class="line"><span class="keyword">let</span> appName = infoDic?[<span class="string">"CFBundleDisplayName"</span>]</div></pre></td></tr></table></figure>
+<p>到这里，一个调用 <code>MFMailComposeViewController</code> 的 iOS 邮件反馈就基本写完了。运行的时候，要注意用虚拟器的话可能会报错，测试需要真机环境。效果如下。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-2433d26cfb269dd7.gif?imageMogr2/auto-orient/strip" alt="demo"></p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/markplan/" data-toggle="tooltip" data-placement="top" title="马克计划，用进度条的方式优雅地管理个人项目">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/how_to_download_video/" data-toggle="tooltip" data-placement="top" title="如何下载网页上的视频">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#iOS" title="iOS">iOS</a>
+                        
+                          <a class="tag" href="/tags/#Swift" title="Swift">Swift</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2016/ios_feedback_mail_in_swift/";
+    var disqus_url = "https://zoomyale.com/2016/ios_feedback_mail_in_swift/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          对「即刻」产品思路的一点思考 - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2016/jike/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/jike2.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#产品" title="产品">产品</a>
+                        
+                          <a class="tag" href="/tags/#产品笔记" title="产品笔记">产品笔记</a>
+                        
+                    </div>
+                    <h1>对「即刻」产品思路的一点思考</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2016-12-28
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>2016 年余量已经不足 1% 了，似乎到处都在做年终盘点。我也来凑个热闹，写写我的个人年度应用<a href="https://www.ruguoapp.com/" target="_blank" rel="external">「即刻」</a>。对一个主要靠口碑相传杀入国区 App Store 前 500 的应用，作篇推荐显得没事找事。那就趁着它 3.0 改版，以一个老用户的视角来写点关于产品的个人思考吧。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-985a9a70c337ca3d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="基于兴趣的极简信息推送工具"></p>
+<h2 id="为什么不把「消息」盒子放在首页"><a href="# 为什么不把「消息」盒子放在首页" class="headerlink" title="为什么不把「消息」盒子放在首页"></a>为什么不把「消息」盒子放在首页 </h2><p> 我认识的很多「即刻」的用户经常不解一个问题──为什么最频繁使用的「消息」标签不是应用默认的首页。毕竟浏览「消息」才是每次打开应用的首要动机，而新用户又另有引导关注页面，何必让老用户每每打开应用面对一堆「发现」呢？</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-985fa84214e8fc3f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="首页是推荐主题的「发现」"></p>
+<p>这显然是权衡的结果。「即刻」的资讯聚合是基于细颗粒兴趣主题的，好处很明显──节省了用户过滤信源的时间成本。但掣肘也很突出，细颗粒资讯天生就有内容少、更新频率低的特点。像「今天微博上在热议些什么」只能是一天一条，而大量基于热点事件的「提醒」（原来叫「主题」），在热点过去后，更新频率会锐降乃至停止。</p>
+<p>如果关注的「提醒」更新频次不高、内容数量不够，长此以往势必影响用户的活跃度和留存。所以，<strong>持续稳定地提供新的内容主题，并且诱导用户关注</strong>，是「即刻」必须解决的两个问题。让「发现」标签踞于首页，可能不是一种优雅的解决办法，但肯定是有效的。</p>
+<p>其实「即刻」也正在努力从产品架构上解决这个问题──在「消息」盒子顶部增加「最近热门」、在 Feed 流中加入小报和主题推荐，甚至引入用户「个人页面」，某种程度上都算是新「提醒」的推荐机制吧。</p>
+<h2 id="频繁的更新想要做什么"><a href="# 频繁的更新想要做什么" class="headerlink" title="频繁的更新想要做什么"></a>频繁的更新想要做什么 </h2><p> 看了下「即刻」iOS 版的更新记录，今年下半年从 2.5.0 到 3.0.0 总共更新了 15 个版本。除了迭代优化产品阅读体验和完善分享、注册引导外，产品结构上的变化主要是如下两部分：</p>
+<p>其一：</p>
+<ul>
+<li>增加评论功能（2.5.0）</li>
+<li>评论点赞（2.6.2）</li>
+<li>个人页面、关注关系、动态更新（2.7.0）</li>
+<li>用户黑名单及举报（2.7.3）</li>
+<li>用户可以创建「提醒」（3.0.0）</li>
+</ul>
+<p>其二：</p>
+<ul>
+<li>调整发现页面（2.5.3）</li>
+<li>新增最近热门（2.6.3）</li>
+<li>新增首页「猜你喜欢」（2.7.1）</li>
+<li>新增搜索建议（3.0.0）</li>
+</ul>
+<p>摆在一起的话，不难看出，迭代的产品意图还是挺清楚的。其二主要是为了解决用户获取新主题的问题，而其一呢看上去是在打造用户关系链。</p>
+<p>尽管每个产品经理都有个做社区的梦，我倒觉得「即刻」打造用户关系链的意图未必在做内容社区。这个判断是基于其产品定位而作出的。一个号称要帮你以「最偷懒」的方式获取资讯的应用，内容属性势必优于社交属性，而过分突出社交其实会对内容锐度产生损害（想想坐拥强大关系链的 Facebook 和微信吧）。</p>
+<p>那「即刻」打造用户关系链想做什么？我觉得还是回到其作为产品必须面对的问题，就是持续稳定地提供新的、细颗粒内容主题给用户。「即刻」以往的运作，纯银说「无非是各种爬虫抓取，规则过滤，高效率人工审核，提高 Push 到达率」。</p>
+<p>规则和爬虫可以解决资讯获取的问题，但是如何保证大量稳定有趣的资讯主题呢？靠常规的报料 +PGC 运营，可以保证内容源的质量，但同样的成本条件下，却无法扩大内容源的数量和广度。</p>
+<p>所以 UGC 成了必然会考虑的产品策略──把爬虫和规则过滤作为工具开放给用户，由用户来创造「提醒」主题以提供内容源，由运营来审核保证质量和品味。而在解决内容主题供应的问题后，针对大量的主题，用户关系链则起到了关键分发的作用。</p>
+<h2 id="即刻想成为什么"><a href="# 即刻想成为什么" class="headerlink" title="即刻想成为什么"></a>即刻想成为什么 </h2><p> 在 3.0 的新版本中，我注意到了一个有意思的变化：原先的「主题」被改叫作「提醒」。联系最近的版本更新和其介绍「基于兴趣的极简信息推送工具」，不难看出「即刻」作为一个资讯聚合应用的野心。它想成为你个人资讯获取的集合地和最终的出口，一个聚合你关注内容、阅读兴趣的数据中心。</p>
+<p>可能有人会觉得聚合阅读应用很难赚到钱，我倒觉得不尽然。即使当年关停的 Google Reader，也只是由于公司战略调整，无关“revenue vs operating costs”（<a href="https://www.quora.com/Google-Reader-Shut-Down-March-2013/Why-did-Google-kill-Google-Reader?srid=hRbe&amp;share=1" target="_blank" rel="external">Why did Google kill Google Reader?</a>）。</p>
+<p>作为内容分发渠道的聚合阅读应用，其价值不止在流量，还有数据。由于「即刻」内容天生的锐度，内容越是合用户胃口、交互越是频繁，「即刻」积累的数据就越有价值。</p>
+<p>对比当初微博开始作智能推荐时，有用户因为搜索过「纸钱」，就频繁在信息流给人推荐棺材链接的事，「即刻」的段位显然要高许多。不过，要实现那样的目标，对其活跃用户数量及用户参与度的要求要远比现在高得多。</p>
+<h2 id="那么，它能成功吗？"><a href="# 那么，它能成功吗？" class="headerlink" title="那么，它能成功吗？"></a>那么，它能成功吗？</h2><p>据我了解，尽管「即刻」已经融到了 B 轮，但在品牌推广上，几乎没有赶上或造成过什么传播爆点──愣是生生靠口碑相传和一些大佬的背书，成功杀进了 App Store 下载榜前 500，相当厉害。</p>
+<p>但是接下来，作为上升期的产品，它面临的问题是，怎么扩大目标用户以及怎么留存新用户。纯银在 <a href="http://www.jianshu.com/p/51189b187e94" target="_blank" rel="external"> 博客 </a> 中一针见血说出了它面临的核心问题：新用户增长慢，流失率较高 (目标人群窄 + 上手门槛高)，变现模式较弱。我设身处地地想了下，确实每个小问题都是巨大且艰难的挑战。</p>
+<p>而且「即刻」还需要面对一个伴随产品形态的天然悖论：一方面，对新用户而言，关注甚至创建「提醒」所需的学习成本和使用意愿，形成了一定使用门槛。另一方面，如果不关注「提醒」就能获得良好的阅读体验的话，显然和个性化信息推送的理念背道而驰了。</p>
+<p>我不知道它能不能成功。但作为忠诚用户，我希望它能，甚至还存了一点私心的想象，希望它可以不改变内容气质，而试着去探索变现模式──既然活跃用户的忠诚度很高，可不可能以用户付费为主要盈利模式呢？我们可以为高质量的音乐付费，为 60s 的回答付费，能不能也为高质量和低信噪比的资讯付费呢？不过这到底是一点个人的想象罢了，毕竟教育市场的试错成本太高了。</p>
+<p>总之，希望 2017 年「即刻」能做越好吧。</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/vultr_and_ss/" data-toggle="tooltip" data-placement="top" title="科学上网的终极姿势：在 Vultr VPS 上搭建 Shadowsocks">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#产品" title="产品">产品</a>
+                        
+                          <a class="tag" href="/tags/#产品笔记" title="产品笔记">产品笔记</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2016/jike/";
+    var disqus_url = "https://zoomyale.com/2016/jike/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

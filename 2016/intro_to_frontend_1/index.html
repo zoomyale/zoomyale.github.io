@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          前端入门篇 1: 如何把设计稿还原成真实网页 - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2016/intro_to_frontend_1/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/udacity2.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                    </div>
+                    <h1>前端入门篇 1: 如何把设计稿还原成真实网页</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2016-03-27
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>如果你对网页设计及开发感兴趣，但是对标题里出现的第一个名词就摸不着头脑，先不要方。本文对小白友好，零基础可读，保证你读完能了解网页开发的基本思路和流程，明白网页设计稿是怎样被开发实现的。</p>
+<h2 id="1- 什么是前端"><a href="#1- 什么是前端" class="headerlink" title="1 什么是前端"></a>1 什么是前端 </h2><p> 首先，所谓的前端是指什么呢？前端（front-end）是相对后端（back-end）而言的，是描述进程开始和结束的通用词汇。在计算机程序中，前端作用于采集输入信息，后端进行处理。</p>
+<p>而我们通常所说的「前端」，一般是指 web 前端，可以理解为网页的界面样式和视觉呈现。所以，前端设计一般视作网站的视觉设计，前端开发则是视觉设计的代码实现。</p>
+<h2 id="2- 前端开发语言"><a href="#2- 前端开发语言" class="headerlink" title="2 前端开发语言"></a>2 前端开发语言</h2><p>HTML、CSS 和 JavaScript 是前端开发中三种最基础的代码语言。看到代码你先别急着关网页，先来欣赏下使用不同程序语言的程序员之间的鄙视链（笑）。</p>
+<blockquote>
+<p>汇编 &gt;C &gt;C++ &gt;Python &gt;Java 及 C# 及 PHP（这三者相互撕） &gt;VB &gt; 那些坚持把 HTML 称为程序语言的人</p>
+</blockquote>
+<p>所以你大概明白了，对于完全零基础的人来说，前端开发所用的语言（除了 JavaScript），是相对比较容易学习和上手的。</p>
+<h3 id="2-1-HTML-CSS-JavaScipt"><a href="#2-1-HTML-CSS-JavaScipt" class="headerlink" title="2.1 HTML/CSS/JavaScipt"></a>2.1 HTML/CSS/JavaScipt</h3><p>你可以把网页想象成一间房子。HTML 决定了网页的框架结构——有几间房间、作什么用途、里面摆放什么东西，CSS 决定了网页的样式——房间是如何装潢的（如墙壁是什么颜色的），JavaScript 则决定了网页上的用户交互和数据处理——用遥控器遥控电视。</p>
+<p>下面简单介绍一下 HTML 和 CSS 语言的用处和用法，如果想继续学习，可以参考翁恺老师的两门公开课程——<a href="http://study.163.com/course/introduction/171001.htm#/courseDetail" target="_blank" rel="external">HTML5 入门 </a> 和<a href="http://study.163.com/course/introduction/190001.htm#/courseDetail" target="_blank" rel="external">CSS3</a>。</p>
+<h3 id="2-2-HTML"><a href="#2-2-HTML" class="headerlink" title="2.2 HTML"></a>2.2 HTML</h3><p>HTML 是一种网页标记语言。它主要是利用标签来告诉浏览器，标签之间的东西是什么——是标题、段落、图片还是链接等。浏览器则会根据 HTML 标签，相应地作出显示。下面举几个栗子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是 1 级标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“这是链接地址”</span>&gt;</span> 这是链接的文字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">“这是图片的路径或链接地址”/</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="2-3-CSS"><a href="#2-3-CSS" class="headerlink" title="2.3 CSS"></a>2.3 CSS</h3><p>CSS 中文名叫做「层叠样式表」，从名字里就可以看出，它是一种声明样式的文档。我们可以通过链接外部 css 文档，或者将样式写在 HTML 文档的 <code>&lt;head&gt;&lt;/head&gt;</code> 标签中，抑或在 HTML 标签中内嵌属性 <code>style=&quot;&quot;</code> 来实现对样式的定义。举个例子，我们要让 <code>&lt;p&gt; 这个段落 &lt;/p&gt;</code> 的背景变成灰色，就可以用以下三种方法实现：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* 方法一：直接用 style 属性 */</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">“background-color:grey;”</span>&gt;</span>这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法二：在 HTML 文档的<span class="tag">&lt;<span class="name">head</span>&gt;</span> 标签中声明（会应用于页面中所有的 <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> 段落）*/</div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">	p&#123;</div><div class="line">	background-color:grey;</div><div class="line">	&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法三：通过外链实现 */</div><div class="line">// 另建一个 css 文档，在其中写上方法二中 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml"> 标签间的内容，再在 HTML 文档中作如下声明</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">“css 文档的路径”</span> <span class="attr">rel</span>=<span class="string">“stylesheet</span>"<span class="attr">type</span>=<span class="string">“text/css”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="3- 网页上的框"><a href="#3- 网页上的框" class="headerlink" title="3 网页上的框"></a>3 网页上的框 </h2><p> 代码语言只是前端开发实现的基础工具，要还原一个网页视觉稿，你还需要掌握以下的方法，并且记住——网页上的所有东西都盛放在框中。</p>
+<h3 id="3-1-Chrome 开发者工具"><a href="#3-1-Chrome 开发者工具" class="headerlink" title="3.1 Chrome 开发者工具"></a>3.1 Chrome 开发者工具</h3><p>Chrome 开发者工具是对前端开发最有用的神器，对，没有之一。它不仅可以让你看到网页的源码，每个元素的样式、构成，还能让你编辑源码并且实时查看页面效果。</p>
+<p>你可以在 Chrome 的菜单栏中，点击 <code> 更多工具 &gt; 开发者工具 </code> 打开开发者工具，也可以在网页任意位置右击，点击 <code> 检查 </code> 打开。打开后，可以同时看到网页页面和开发者工具窗口。其中开发者工具左半边是 HTML 的源码，里面有各种各样的元素，右边显示的是你在左半边选择的元素的样式。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-8356bf6960c474c3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Chrome 开发者工具"></p>
+<p>点击开发者工具左半边窗口中的各种标签，你可以看到页面上你所选择的元素周围出现了一个亮色的框（如上图所示）。这就是所谓的「任何一个页面元素都盛放在框中」。</p>
+<h3 id="3-2- 如何框化视觉稿"><a href="#3-2- 如何框化视觉稿" class="headerlink" title="3.2 如何框化视觉稿"></a>3.2 如何框化视觉稿 </h3><p> 知道了网页元素都盛放在框中对于前端开发有啥用呢？用处可大了去了。现在，假设你是一个前端开发工程师，设计师给了你如下的设计稿，你该做的第一步是什么呢？</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-9cbe9a5d09c55f06.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="apple.cn"></p>
+<p>那就是把设计稿上你能看到的所有元素都放进框中，不光是那些天然已经是框状的图片，还有那些不呈现为方框状的文字等。实际上，一个 HTML 的标签（例如<code>&lt;p&gt;123&lt;/p&gt;</code>）就是一个框。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-5ca06d37a307fcc7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="框化视觉稿"></p>
+<p>还要注意的是，框是可以嵌套的。所以，要框化这个视觉稿，你首先应该找出一个包括整个页面的最大的框，然后再找出将页面明显分成几块的次大框，再找更小的框，一直找下去，直到无法再分下去。</p>
+<h3 id="3-3- 框化后的代码实现"><a href="#3-3- 框化后的代码实现" class="headerlink" title="3.3 框化后的代码实现"></a>3.3 框化后的代码实现 </h3><p> 等你把所有元素都框化以后，就可以着手开始写代码还原设计稿了。顺序是从最外面的框写起，不断往里面写。这里面有的框是并列关系，比如：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落一，也是框一，我和二是并列哒 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 我是段落二，也是框二，我和一是并列哒<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>也可能是包含关系：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">p</span>&gt;</span>我是段落方框，我被外面的 div 层的框所包围<span class="tag">&lt;/<span class="name">p</span>&gt;</span> </div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="4- 前端开发的流程"><a href="#4- 前端开发的流程" class="headerlink" title="4 前端开发的流程"></a>4 前端开发的流程 </h2><p> 有了工具和方法，那网页设计稿的实现具体是怎样操作的呢？步骤可以概括如下：</p>
+<ol>
+<li>从设计师那里（或者自己设计好）拿到网页的设计稿</li>
+<li>分析设计稿，找到那些现成的框</li>
+<li>找出那些样式重复的元素（或框）——如 1 级标题、2 级标题、段落等</li>
+<li>写 HTML 代码，把内容盛放进框中</li>
+<li>写 CSS 代码，定义元素（或框）的样式（从大的样式特征——如框的宽度，到小的——如字体字重）</li>
+<li>保存代码，在浏览器中打开，检查和设计稿的差距，调整代码</li>
+<li>重复 4-6 步直到还原设计稿</li>
+</ol>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/intro_to_frontend_3/" data-toggle="tooltip" data-placement="top" title="前端入门篇 3：响应式网页设计 101">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/why_blogging/" data-toggle="tooltip" data-placement="top" title="为什么要在老掉牙的独立博客上写东西？">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2016/intro_to_frontend_1/";
+    var disqus_url = "https://zoomyale.com/2016/intro_to_frontend_1/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

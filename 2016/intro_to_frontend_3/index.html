@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          前端入门篇 3：响应式网页设计 101 - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2016/intro_to_frontend_3/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/udacity2.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                    </div>
+                    <h1>前端入门篇 3：响应式网页设计 101</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2016-04-03
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>你肯定有过这样的经历——用手机浏览器打开某一个网页，然后发现页面和电脑上显示的一摸一样（只不过缩放得很小），密密麻麻完全看不清上面有些啥。于是你费力地不停缩放页面，只为看清内容和定位自己浏览到哪了。这种糟心的体验，简直让你想仰天怒吼，WTF！</p>
+<p>为了解决这个问题，前端设计师们采用了一种方法，那就是响应式网页设计（Responsive web design，RWD）。通过使用这种设计方法，可以实现同一网站在手机、平板、电脑等各种尺寸各异的屏幕上舒服地阅读和导航，同时减少缩放、平移和滚动等等糟心地体验。</p>
+<h2 id="1- 简单的 Div-CSS 响应式布局"><a href="#1- 简单的 Div-CSS 响应式布局" class="headerlink" title="1 简单的 Div+CSS 响应式布局"></a>1 简单的 Div+CSS 响应式布局 </h2><p> 如果你要在 PC 端体验什么叫响应式布局，最简单的方法是拖动浏览器边框，让其宽度变小，看页面是否随之变化。其次，另有一个体验和检查响应式布局的利器——<a href="http://design.google.com/resizer/" target="_blank" rel="external">Google Resizer</a>(需翻墙)。只要在输入框输入网址，就可以查看不同视窗（viewport）下的页面效果。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-0210c06e0d35a428.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Google Resizer"></p>
+<p>说起来好像很厉害的样子，那具体要怎么做呢？首先，我们不妨以四个层并列一行的布局为例，来看看怎样实现最为简单基础的响应式页面布局。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>上一篇 <a href="http://www.jianshu.com/p/52f19b707a8d" target="_blank" rel="external"> 前端入门篇（二）：如何用 CSS+DIV 快速布局页面 </a> 里面讲过，因为 <code>&lt;div&gt;&lt;/div&gt;</code> 默认的排列方式是纵向排列的，所以要实现同一行层里，四个层横向排列的话，要为 <code>row</code> 类声明样式<code>display:flex;</code>。</p>
+<p>当我们的终端从 PC 变为手机的时候，浏览器视窗（viewport）的宽度变窄了，每个层都会被挤压，每个层里面的东西也会相应地被挤压缩小，如下图。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-7086c386c7906e70.gif?imageMogr2/auto-orient/strip" alt="非 RWD 页面视窗收窄示意图"></p>
+<p>毫无疑问这会影响观感和体验。那运用 RWD 思维，怎么初步简单地解决这一问题呢？很简单，视窗变窄以后，把最右边的层依次往下挪动就行了（效果如下图）。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-ce6570a673ea1f0c.gif?imageMogr2/auto-orient/strip" alt="层随着视窗收缩向下挪动"></p>
+<p>而这种效果的代码实现也非常简单，只要在 CSS 加一行属性就够了：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.row</span> &#123;</div><div class="line">      <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">      <span class="attribute">display</span>:flex;</div><div class="line">      <span class="attribute">flex-wrap</span>:wrap; <span class="comment">/* 没错就是它 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="2- 响应式页面布局的要素"><a href="#2- 响应式页面布局的要素" class="headerlink" title="2 响应式页面布局的要素"></a>2 响应式页面布局的要素 </h2><h3 id="2-1-Viewport"><a href="#2-1-Viewport" class="headerlink" title="2.1 Viewport"></a>2.1 Viewport</h3><p> 上面是非常简单的响应式布局基础，如果要进阶的话，必须先了解几个重要的概念。首先就是上文出现过的视窗（viewport）。</p>
+<p>什么是 <code>viewport</code> 呢？简单地说，就是一个网页的可见区域，不同的设备上的 <code>viewport</code> 是不同的。针对这一点，我们在网页设计的时候，就可以在 HTML 的 <code>&lt;head&gt;&lt;/head&gt;</code> 中写下如下语句：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span> =<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>其中 <code>width</code> 控制 viewport 的宽度，这里指定为<code>device-width</code>，即为设备的宽度，也就是告诉浏览器要根据设备屏幕尺寸调整这个网页。</p>
+<p><code>initial-scale</code>控制页面初始缩放程度。页面呈现大小等于设置的宽度乘以 <code>initial-scale</code> 的值——如果是 1.0 的话，页面宽度等于设备宽度。换句话说，如果这个值是 2.0 的话，整个页面的宽度会是设备的两倍——你就要左右拖动才能看全整个页面了。</p>
+<h3 id="2-2-Media-Queries-amp-Breakpoints"><a href="#2-2-Media-Queries-amp-Breakpoints" class="headerlink" title="2.2 Media Queries &amp; Breakpoints"></a>2.2 Media Queries &amp; Breakpoints</h3><p>上述 <code>viewport</code> 还只是 RWD 的一个基本设置，真正能玩出各种花样的就是 <code>media queries</code> 和<code>breakpoint</code>这套组合拳了。</p>
+<p><code>media queries</code>是 CSS3 中一种非常便捷的响应式布局方法。它可以根据你所设置的<code>breakpoints</code>，相应地调整页面布局和样式。它的主要应用形式如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media screen and (&lt;breakpoint&gt;) &#123;</div><div class="line">  选择器 &#123;</div><div class="line">	属性：属性值；</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>来举个栗子方便理解吧。还是上面那个 4 个层并列的例子, 使用上文的 <code>flex-wrap</code> 方法，页面会根据 <code>viewport</code> 宽度自动调整。但是由于「自动」得不够智能，所以会出现下图三个层在上、一个层在下的状况。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-051e280d15b8c39a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="交给浏览器决定层下沉的状况"></p>
+<p>这就有点尴尬了。我们拖动页面的时候发现 <code>viewport</code> 在 620px 到 820px 之间会出现这种状况。我们通常会希望能避免这一状况，这里就轮到 <code>media queries</code> 和<code>breakpoint</code>这套组合拳了。</p>
+<p>我们可以不使用上文所述方法修改 <code>.row</code> 样式，取而代之地，在 CSS 中设置页面宽度只有在小于 600px 的时候，层才可以自动下沉。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">media</span> screen and (max-width:<span class="number">600px</span>) &#123;</div><div class="line">  <span class="selector-class">.row</span>&#123;</div><div class="line">    <span class="attribute">flex-wrap</span>:wrap;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>另外，在实际使用中，<code>breakpoint</code>可以不止一个，换而言之，你可以这么用<code>media queries</code>:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">@media screen and (min-width:500px) and (max-width:800px)&#123;</div><div class="line">  选择器 &#123;</div><div class="line">	属性：属性值；</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="3- 前端入门篇总结"><a href="#3- 前端入门篇总结" class="headerlink" title="3 前端入门篇总结"></a>3 前端入门篇总结 </h2><p> 作为一个技术小白，仅仅通过一些公开课的学习，厚颜地来写这三篇入门文章，其实是有点汗颜的。不过考虑到很多老手和专家，会忘记自己还是新手时的疑问和状况。所以我觉得，自己以一个小白的身份来写一些面向小白的技术文章，还是有其意义的。</p>
+<p>写这个系列并不是为了作一个全面系统的入门教程，只是想浮光掠影地谈一些原理和方法，做一块「引玉」的「砖」吧。</p>
+<p>如果你看完这些皮毛，真的对 web 前端产生了兴趣，有深入探究的欲望，我会强烈推荐以下系统且全面的入门教学公开课程：</p>
+<ul>
+<li><a href="http://study.163.com/course/introduction/171001.htm#/courseDetail" target="_blank" rel="external">网易公开课：HTML5 入门</a></li>
+<li><a href="http://study.163.com/course/introduction/190001.htm#/courseDetail" target="_blank" rel="external">网易公开课：CSS3</a></li>
+<li><a href="https://www.udacity.com/course/intro-to-html-and-css--ud304" target="_blank" rel="external">Udacity: Intro to HTML and CSS</a></li>
+<li><a href="https://www.udacity.com/course/html5-canvas--ud292" target="_blank" rel="external">Udacity: HTML5 Canvas</a></li>
+<li><a href="https://www.udacity.com/course/responsive-web-design-fundamentals--ud893" target="_blank" rel="external">Udacity: Responsive Web Design Fundamentals</a></li>
+<li><a href="https://www.udacity.com/course/javascript-basics--ud804" target="_blank" rel="external">Udacity: JavaScript Basics</a></li>
+</ul>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/intro_to_frontend_2/" data-toggle="tooltip" data-placement="top" title="前端入门篇 2：利用 Div+CSS 快速布局页面">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/intro_to_frontend_1/" data-toggle="tooltip" data-placement="top" title="前端入门篇 1: 如何把设计稿还原成真实网页">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#教程" title="教程">教程</a>
+                        
+                          <a class="tag" href="/tags/#前端" title="前端">前端</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2016/intro_to_frontend_3/";
+    var disqus_url = "https://zoomyale.com/2016/intro_to_frontend_3/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

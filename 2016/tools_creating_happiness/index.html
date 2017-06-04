@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          安利 | 提升个人幸福感的六件利器 - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2016/tools_creating_happiness/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/9485-a9ee13c3935894fb%20%E6%8B%B7%E8%B4%9D.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#工具" title="工具">工具</a>
+                        
+                          <a class="tag" href="/tags/#安利" title="安利">安利</a>
+                        
+                    </div>
+                    <h1>安利 | 提升个人幸福感的六件利器</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2016-04-21
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <blockquote>
+<p>本文源于利器的问题——「你认为最提升你幸福感的六件利器有哪些？」 <a href="liqi.io">利器 </a> 是一个很有意思的内容媒体，邀请创造者分享他们的工作工具和使用方式。原本是 <a href="https://the-offline.com/about/" target="_blank" rel="external">《离线》</a> 这个科技文化 MOOK 的专题，现在正在尝试社群运营，加入更多 UGC。虽然未来可能又是「内容 + 电商」的套路，不过还是挺看好他们的——毕竟人家举着「科技文化」的大旗呢。</p>
+</blockquote>
+<p>说起「幸福感」，首先想起的是那个公式<code>Happiness = Reality - Expectations</code>。所以本文安利的利器，大致都在某种程度上为我那些繁琐的事务和情境提升了体验，或者说 <code>Reality</code>。</p>
+<h2 id="还耳根一个清静"><a href="# 还耳根一个清静" class="headerlink" title="还耳根一个清静"></a>还耳根一个清静</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-4062528b763988a4.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：Bose QuietComfort 20i</li>
+<li>价格：1900 RMB</li>
+<li>链接：<a href="http://www.amazon.com/Bose-QuietComfort-Acoustic-Cancelling-Headphones/dp/B00X9KV0HU/ref=sr_1_1?ie=UTF8&amp;qid=1461131609&amp;sr=8-1&amp;keywords=bose+qc20" target="_blank" rel="external">Amazon</a></li>
+</ul>
+<p>说到 QC 肯定得祭出下面这句名言：「如果你愿意一次花五毛钱消弭掉耳边的聒噪，那么想想未来一两年的清净，这耳机是值得买的」。QC 所谓民用级耳机最强的降噪效果之强——开了降噪走在大街上，耳边嘈杂褪去只剩音乐声，简直有种电影里自带 BGM 的主角范。</p>
+<p>长时间公交通勤途中，QC20i+ 喜马拉雅 /Podcast 的搭配也是充分利用碎片化时间的利器。另外，它还有个兄弟耳罩耳机叫 QC25，关于二者之争我在知乎写过一个回答，感兴趣可以参考 → <a href="https://www.zhihu.com/question/25712407/answer/93102584?from=profile_answer_card" target="_blank" rel="external">Bose qc25 和 qc20i 选谁比较好？</a></p>
+<h2 id="指尖 MASSAGE"><a href="# 指尖 MASSAGE" class="headerlink" title="指尖 MASSAGE"></a>指尖 MASSAGE</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-bfc91a13d5245624.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：Filco Minila Air（茶轴）</li>
+<li>价格：1000 RMB</li>
+<li>链接：<a href="https://detail.tmall.com/item.htm?id=21639543324&amp;spm=a1z09.2.0.0.kaxs0R&amp;_u=lkgaejj8dae&amp;sku_properties=5919063:6536025" target="_blank" rel="external">某宝</a></li>
+</ul>
+<p>对于既不是码农又不是游戏党的人来说，机械键盘的意义何在呢？不同人的观点大概会有很大的分歧吧。就我而言，在工作学习中享受机械键盘的指尖按摩，已经慢慢变成一种幸福的日常了。</p>
+<p>虽然 Minila Air 非常规的 67 键需要你花点时间来适应，但是足够紧凑的布局和蓝牙连接，让它能很轻易地被随身携带。另外，一旦接受了它拇指位 <code>Fn</code> 键和 <code>ESDF</code> 组合形成方向键的设定，能大大地提高码字 / 代码的效率。再辅以 <code>OSX</code> 中<code>Command</code>、<code>Option</code>和方向键的搭配组合，完全可以在码字过程中抛开鼠标，全键盘操作。</p>
+<h2 id="一分钟做杯好咖啡"><a href="# 一分钟做杯好咖啡" class="headerlink" title="一分钟做杯好咖啡"></a>一分钟做杯好咖啡</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-b1b417fe381538c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：AeroPress 爱乐压</li>
+<li>价格：255 RMB</li>
+<li>链接：<a href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.kaxs0R&amp;id=19342278026&amp;_u=lkgaejj254e" target="_blank" rel="external">某宝</a></li>
+</ul>
+<p>一个做塑料飞盘的公司生产的几块塑料器具能做出一杯高品质的咖啡？听着可能有点不靠谱，但事实上爱乐压（AeroPress）真的办到了。它的结构类似于一个注射器，据说是借鉴了法压壶的原理，但结合了滴漏和压滤式咖啡机的特点。业内人士对其出品的咖啡评价很高，甚至每年都还有世界爱乐压大赛（WAC)举行。</p>
+<p>就我使用几个月来的经验来看，做出来的咖啡确实很好喝，但是似乎比较挑咖啡豆（或者说挑冲泡技术）。目前来看，「危地马拉安提瓜」应当是冲泡风味最佳的。</p>
+<h2 id="夏天一起喝精酿才是正经事"><a href="# 夏天一起喝精酿才是正经事" class="headerlink" title="夏天一起喝精酿才是正经事"></a>夏天一起喝精酿才是正经事</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-39dcb0b2c43d6614.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：Hoegaarden Wit Blanche</li>
+<li>价格：9 RMB/ 瓶</li>
+<li>链接：<a href="https://detail.tmall.com/item.htm?id=44904976856&amp;spm=a1z09.2.0.0.kaxs0R&amp;_u=lkgaejjace2" target="_blank" rel="external">某宝</a></li>
+</ul>
+<p>在尝试过诸多所谓「精酿啤酒」后，真的就回不去捧着「雪花」之流工业啤吹的日子了。和后者味道的寡淡如水、纯靠冰镇爽喉相比，精酿啤酒层次丰富的口感真的是有天壤之别。而 Hoegaarden 大概是目前我尝过的所有精酿中，最合口味的了。出产于啤酒党的圣地比利时，Hoegaarden 在小麦啤酒（Witbier）中加入了芫荽，使得喝起来有股香甜的口感。啤酒界的大众点评——<a href="http://www.beeradvocate.com/" target="_blank" rel="external">BeearAdvocate</a>上它的评分是 82/100 - Good。另外，我身边好多平时不喝啤酒的也都表示喜欢它的味道。</p>
+<h2 id="自由即幸福"><a href="# 自由即幸福" class="headerlink" title="自由即幸福"></a>自由即幸福</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-d8347995232295b0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：Shadowsocks</li>
+<li>价格：5 RMB（免费版）</li>
+<li>链接：<a href="https://www.shadowsocksx.me/" target="_blank" rel="external">LightSS</a></li>
+</ul>
+<p>在贵国，全球最大的几个网站都是 404 Not Found，一个存在已久的网站可能一夜之间蒸发掉，而使用搜索引擎时，你可能要翻过好几页广告才找得到你要的信息。要走出贵国局域网，Shadowsocks（影梭）大概是目前最佳的解决方案了——可以自定义代理规则，使用 PAC 或全局代理，无痛 X 墙。最便宜的免费版账户，可以靠捐赠 5 元来换取，有每月 15GB 的免费代理流量。除了视频访问速度稍慢外，轻度用户完全够用了。</p>
+<h2 id="理想的周末是晒晒太阳看看书"><a href="# 理想的周末是晒晒太阳看看书" class="headerlink" title="理想的周末是晒晒太阳看看书"></a>理想的周末是晒晒太阳看看书</h2><p><img src="http://upload-images.jianshu.io/upload_images/9485-d03f9722ec0f8540.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<ul>
+<li>利器：Kindle Paperwhite</li>
+<li>价格：960 RMB</li>
+<li>链接：<a href="http://www.amazon.co.jp/Amazon-DP75SDI-Kindle-Paperwhite-Wi-Fi/dp/B00QJDOM6U/ref=sr_1_1?ie=UTF8&amp;qid=1461221865&amp;sr=8-1&amp;keywords=kindle+paperwhite" target="_blank" rel="external">日亚</a></li>
+</ul>
+<p>关于 Kindle，似乎不用做过多的介绍了。读书的时候，曾经走到哪带到哪，连出门吃个饭也要揣怀里。工作以后，能安安心心捧着它读书的机会已经不多了，曾经的 EDC 也有了吃灰的势头。有时候想静静翻看一阵，总是被杂务打断，慢慢地就没有那样的闲暇和心情，去整日整日地挥霍在读书上了。这时候就想呀，如果能找个周末，脑袋放空，晒晒太阳看看书，真是再幸福不过了。</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                        <li class="previous">
+                            <a href="/2016/how_to_download_video/" data-toggle="tooltip" data-placement="top" title="如何下载网页上的视频">&larr; Previous Post</a>
+                        </li>
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/intro_to_frontend_2/" data-toggle="tooltip" data-placement="top" title="前端入门篇 2：利用 Div+CSS 快速布局页面">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#工具" title="工具">工具</a>
+                        
+                          <a class="tag" href="/tags/#安利" title="安利">安利</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2016/tools_creating_happiness/";
+    var disqus_url = "https://zoomyale.com/2016/tools_creating_happiness/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
