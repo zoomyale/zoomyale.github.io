@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="一个工具癖、伪极客和成长中的产品汪">
+    <meta name="keyword"  content="undefined">
+    <link rel="shortcut icon" href="/img/favicon.ico">
+
+    <title>
+        
+          重装 Mac 后，我第一时间装了这 83 个 App - 也而的博客 | Yale&#39;s Blog
+        
+    </title>
+
+    <link rel="canonical" href="https://zoomyale.com/2017/setup_mac/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/hux-blog.min.css">
+
+    <!-- Pygments Highlight CSS -->
+    <link rel="stylesheet" href="/css/highlight.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="https://cdn.staticfile.org/font-awesome/4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">也而的博客</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+
+                    
+
+                        
+                        <li>
+                            <a href="/about/">About</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/tags/">Tags</a>
+                        </li>
+                        
+                    
+
+                        
+                        <li>
+                            <a href="/archive/">Archives</a>
+                        </li>
+                        
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Main Content -->
+    
+<!-- Image to hack wechat -->
+<!-- <img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('http://7xrasx.com1.z0.glb.clouddn.com/blur.png')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#工具" title="工具">工具</a>
+                        
+                          <a class="tag" href="/tags/#mac" title="mac">mac</a>
+                        
+                    </div>
+                    <h1>重装 Mac 后，我第一时间装了这 83 个 App</h1>
+                    <h2 class="subheading"></h2>
+                    <span class="meta">
+                        Posted on
+                        2017-06-21
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <p>前阵子 MacBook 莫名故障，几番倒腾无果后用 Time Machine 恢复设备。不幸的是，Time Machine 最近的一次备份是一个多月前，念及自己 MacBook 装了上百个使用频率很低的 App，还配置了一堆无用的环境，就起了「干脆从头来过」的念头。</p>
+<p>重装之余，学着 <a href="https://medium.com/@scomper/mac- 系统重装的那些坑 -6e2d23c8a98a" target="_blank" rel="external">@scomper</a> 给自己所装的各种 App 和配置做了一个大纲，方便自己日后装新机时参考。另外，这也我使用 MacBook 三年来所积攒下的经验，所以以后如果有人要我推荐 App，甩出这篇文章链接就可以了 😄。</p>
+<h2 id="恢复外设配置"><a href="# 恢复外设配置" class="headerlink" title="恢复外设配置"></a>恢复外设配置 </h2><p> 我的 MBP 接了一堆外设，在家时插上各种「试管」作主机，出门拔了线就能轻装上阵。所以要恢复到舒服的使用环境，第一步就是要复原蓝牙鼠标、键盘，显示器这些外设的配置。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/icon_system_prefs.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Logitech Options</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://www.logitech.com.cn/zh-cn/product/options" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>罗技键鼠必备的配置 App。一些鼠标可以通过它，自定义在全局和特定应用内，功能键所分别对应的不同功能。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/karabiner.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Karabiner-Elements</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://github.com/tekezo/Karabiner-Elements" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>macOS Sierra 的改键神器，特别适用于非常规键位布局的外接键盘，另外它还能让不同的键盘使用不同的配置。Sierra 以前的版本可以使用 <a href="https://pqrs.org/osx/karabiner/" target="_blank" rel="external">Karabiner</a>。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/009b445e-6ab1-e011-9727-0025902c7e73_2_full.png.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">SwitchResX</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://www.madrau.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>屏幕分辨率修改工具，强大之处在于开启 HiDPI 模式后，能使 2K/4K 高分辨率外显的 UI 比例接近 Retina 屏。开启方式可以参考：<a href="https://zhihu.com/question/35300978/answer/88073400" target="_blank" rel="external">Dell U2515 开启 HiDPI 教程</a>。</p>
+<h2 id="最高优先级应用"><a href="# 最高优先级应用" class="headerlink" title="最高优先级应用"></a>最高优先级应用 </h2><p> 最高优先级的应用，是恢复正常使用 MacBook 的基础条件。基本上就是一些密码、文件同步和网络环境相关的 App。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/1password64.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">1Password</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://1password.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>虽然 Apple 的 Keychain 密码管理已经越来越强大，但说到跨平台和功能完备的密码管理，舍 1Password 其谁。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon71-64.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">坚果云 </div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.jianguoyun.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>国内唯一堪一用的同步盘，每月可以免费上传 1G、下载 3G 文件。著名的非商业机构 <a href="https://www.ssllabs.com/" target="_blank" rel="external">Qualys SSL Labs</a> 对众多网盘加密传输的评估如下：Dropbox A+，坚果云 A，百度云 C。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon51.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Surge</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://nssurge.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>强大的网络调试工具，其附属功能是能让你上各种「不可名状」的网站。奈何过于稳定可靠，以致大家都将主副功能颠倒使用了 🤷‍♀️。近来国区 iOS 版惨遭下架，还好 macOS 版不受影响。 </p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon55.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Dropbox</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://dropbox.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>虽然坚果云很棒，但是毕竟服务器在国内。经历了种种「高兴就封你」的操作以后，一个「真正」的个人网盘尤其重要。在恢复网络环境后，老牌的 Dropbox 其实异常可靠。</p>
+<h2 id="恢复应用环境"><a href="# 恢复应用环境" class="headerlink" title="恢复应用环境"></a>恢复应用环境 </h2><p> 这以下安装的应用，其实都属于个人偏好了。某些类别当然有许多其他同类优秀的 App，挂一漏万，以下列举的不过是自己适应而用熟的。</p>
+<h3 id="效率工具"><a href="# 效率工具" class="headerlink" title="效率工具"></a>效率工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon35.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Alfred</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.alfredapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>大名鼎鼎的 Launcher，允许你通过键盘输入，来启动各种不太常用的 App，管理系统，搜索和打开网页、文件，以及配合各类扩展 workflow，高效地完成各种任务。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon20.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Manico</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://manico.im" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>设计初衷是 App 切换器，但其实「启动器」的定位更适合它——为常用的 App 分配一个数字键或字母键，同时按住 <code>⌘</code> / <code>⌥</code> / <code>⇧</code> / <code>⌃</code> 键中的一个，来快速启动它们。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon7.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">SpaceLauncher</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://spacelauncherapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>键盘启动器中的后起之秀，把空格键作为 Hyper key。比 Manico 更泛用，可以快速启动 App 或打开某一路径文件夹。并且支持多层级，比如先按键 A 打开某一组键，再按键 A 启动某一功能。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon69.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Keyboard Maestro</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.keyboardmaestro.com/main/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>大概是 Mac 上最强大好用的自动化工具了吧，功能完全可以取代其他许多效率工具，大概可以称作是「Mac 上的 Workflow」。但学习曲线和配置时间成本较高，适合慢慢把玩。<a href="https://sspai.com/post/36442#fn1" target="_blank" rel="external">少数派此文 </a> 是绝佳上手教程。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon56.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Dropzone</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://aptonic.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>鼠标拖拽效率工具，通过一些预装的扩展，可以实现诸如「上传图片至图床并复制其链接」、「自动安装程序并弹出安装盘及删除 dmg 文件」等自动化流程。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon74.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">PopClip</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://pilotmoon.com/popclip/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>最著名的 Mac 鼠标效率工具，选中文字后能出现类似 iOS 选词后的 Pop 弹窗，呈现你安装的扩展功能。比如选中「银河护卫队」几个字，在弹窗中选择「豆瓣电影」按钮，会打开浏览器跳转「银河护卫队」的豆瓣页。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon60.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">HyperSwitch</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://bahoom.com/hyperswitch" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Mac 默认的窗口切换只能显示图标，而 HyperSwitch 能让窗口切换像 Windows 一样，展示每个窗口的页面预览。</p>
+<h3 id="系统工具"><a href="# 系统工具" class="headerlink" title="系统工具"></a>系统工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon36.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Amphetamine</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/us/app/amphetamine/id937984704?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>作用如其名——「安非他命」，保证 Mac 不自动休眠。还可以设置触发条件，比如「连接某个 Wi-Fi」或「连上电源线」时，Mac 保持不休眠。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon44.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Bartender</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.macbartender.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Menu bar 拯救者，可以优雅地管理状态栏上的系统及第三方应用图标，每个图标都有三种状态可定义：折叠隐藏、完全隐藏或者不隐藏。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon13.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Magnet</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://magnet.crowdcafe.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>窗口管理工具，可以使用拖拽和快捷键两种方式操作，能分别适用鼠标与键盘的场景。唯一的不足可能是只能用于窗口排布，而没法快捷地调整窗口的大小。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon49.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">CleanMyMac</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://cleanmymac.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>虽然被一些人诟病是 Mac 上的 360 安全卫士，但是还是有不少 nice to have 的实用功能——比如「完全卸载应用」、「查找大型文件」等。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon48.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">CheatSheet</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.mediaatelier.com/CheatSheet/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>快捷键是能极大提高 App 使用效率的，但是太多的快捷键容易造成记忆负担。CheatSheet 可以让你通过按住 <code>⌘</code> 键，来显示当前 App 的所有快捷键。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon63.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">isHUD</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/us/app/ishud/id484757536?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>由于频繁切换中英文，我经常会陷入「现在是什么输入法状态」的迷思。isHUD 解决了这个问题——在光标定位到输入框，或使用快捷键触发后，屏幕正中会显示当前的输入法状态。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon86.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">1Blocker</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://1blocker.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>最好用的 Safari 内容拦截器，屏蔽规则自定义功能非常强大，而且还可以直观的选择屏蔽元素，并能通过 iCloud 与 iOS 设备上的 Safari 同步。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon67.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Kap</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://getkap.co" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>足够轻量的录屏工具，能选择录屏区域、是否显示鼠标等。录屏片段可以导出为 GIF 或视频。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon34.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">AirServer</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.airserver.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>通过简单的设置，能让 iOS 设备通过 AirPlay 将屏幕投放至 Mac 上，很实用的一个使用场景是：摆脱线材，进行手机屏幕演示或录屏。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon18.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">iStatistica</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/us/app/istatistica/id1025822138?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>在 Menu bar 或者 Today widgets 里显示处理器、内存等设备运行信息。安装 Sensor 扩展后，还能在 CPU 温度过高时通知你。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon27.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Pastebot</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://tapbots.com/pastebot/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>知名开发商 Tapbots 出品的剪贴板应用，独特卖点在于「顺序复制粘贴」和「filter」。前者在填写表单等需要顺序粘贴的场景时特别实用，后者则能在粘贴时，将预设规则运用于复制的内容上。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon6.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Pin</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/cn/app/pin- 剪贴板扩展 /id1092997957?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>iOS 剪贴板启动器 Pin 的 Mac 版，一样有各种便捷的启动操作，我用它主要是将其当作跨设备的剪贴板同步工具（谁让 universal clipboard 那么坑！）</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon25.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Usage</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.mediaatelier.com/Usage/?lang=en" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>来自 CheatSheet 同一家开发商，不需要任何操作，它就会在后台默默地自动记录你使用各个 App 的时长。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon82.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">The Unarchiver</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://unarchiver.c3.cx/unarchiver" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>免费好用的解压缩工具，支持解压 7zip、rar 等格式。最近被 Clean My Mac 的开发商收购了。</p>
+<h3 id="实用工具"><a href="# 实用工具" class="headerlink" title="实用工具"></a>实用工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon59.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Fantastical</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://flexibits.com/fantastical" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>iOS 上的优秀日历应用竞争还是比较激烈的，但到了 macOS 上，真正能做到体验和功能俱全的，就只剩 Fantastical 了。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon3.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Gestimer</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://maddin.io/gestimer/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>交互非常别致的一款提醒应用，通过向下拖拽状态栏上的图标，来设置提醒间隔时间——特别像是在给闹钟上发条。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon8.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Tyme</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://tyme-app.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>给自由工作者统计项目工作时长的 App，有 iOS 和 Apple Watch 版，同步稳定、统计图表直观。我拿它作个人时间追踪用。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon16.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Todoist</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://todoist.com/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>最近声名很燥的 GTD 应用，我用它是受 <a href="http://sspai.com" target="_blank" rel="external"> 少数派 </a> 和 <a href="https://www.macstories.net" target="_blank" rel="external">MacStories</a> 的影响。其他知名的同类应用 2Do／OmniFocus／Things 等都有 macOS 版。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon23.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Spark</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://sparkmailapp.com/zh" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Readdle 开发的免费邮箱应用，卖点是会自动将邮件分为「订阅」「通知」和「个人」，同时可以静默「个人」邮件以外、干扰人的新邮件通知。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon40.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">MoneyWiz</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://wiz.money" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>著名记账应用的 macOS 版，以各种「专业」的报表和自动同步银行账户闻名。另外，它大概是唯一一款能覆盖全平台的专业个人记账应用。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon52.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">CurrencyX</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/cn/app/currencyx-currency-rates-converter/id1088564306?l=en&mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>由独立开发者 <a href="https://61.life" target="_blank" rel="external">@61</a> 开发、小而美的汇率换算应用，支持查看历史汇率和在 Today widget 中查询。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon80.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Transloader</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://eternalstorms.at/transloader/Transloader_for_Mac_and_iOS_-_Start_Downloads_on_your_Mac_remotely_from_your_iPhone_or_iPad/Transloader_for_Mac_and_iOS_-_Start_Downloads_on_your_Mac_remotely_from_your_iPhone_or_iPad.html" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>一个小众但很实用的同步下载工具，作用是能在 iOS 设备标记要下载的链接，尔后安装了 Transloader 的 Mac 会在联网后，自动下载这些链接。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon66.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">iMazing</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://imazing.com/zh" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>秒杀 iTunes 十几条街的 iOS 设备连接管理工具，能无线传输文件甚至备份 iOS 设备，还能提供电池使用情况等设备信息。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/AirDroid.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">AirDroid</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.airdroid.com/zh-cn/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>一款全能好用的 Android 设备连接管理工具，其 killer feature 是可以在 Mac 端接收和回复短信，以及处理系统通知。</p>
+<h3 id="影音播放"><a href="# 影音播放" class="headerlink" title="影音播放"></a>影音播放 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon46-1.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">BiliBili</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://bilimac.eqoe.cn" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>一名高中生开发的开源播放器（后生可畏啊），播放器基于 MPV。主要用于网页视频播放，能在播放器中显示 B 站弹幕。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon10-1.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">IINA</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://lhc70000.github.io/iina/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>macOS 视频播放界的新起之秀，图形化了很多 MPV 的设置。有一个很赞的特性是有 Safari Extension，可以一键在播放器中打开网页视频，从此告别那些让风扇声大作的 Flash 们。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon33.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">MPV</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://mpv.io" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>上面两个播放器都是基于这位老前辈的。MPV 有丰富的自定义设置，还能通过命令行调校，可谓 Geek 味十足了。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon19.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">网易云音乐 </div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/cn/app/ 网易云音乐 /id944848654?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>这似乎没啥好说的，一个 Electron 套壳的网页应用，但是体验做的还算不错吧。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon54.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Downie</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://software.charliemonroe.net/downie.php" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>在尝试过很多视频下载软件、甚至写了这篇 <a href="https://zoomyale.com/2016/how_to_download_video/">《如何下载视频》</a> 的博客后，终于找到了这款最顺手的 GUI 视频下载工具，更新的频率非常高，支持的视频网站的也足够多。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon29.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Permute</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://software.charliemonroe.net/permute.php" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>来自 Downie 同一个开发者的视频下载最佳拍档，视频格式转换和分段合并工具，能与 Downie 配合，将下载的分段视频合并输出。</p>
+<h3 id="读写工具"><a href="# 读写工具" class="headerlink" title="读写工具"></a>读写工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon47.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Calibre</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://calibre-ebook.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>开源强大的电子书管理应用，除了电子书库和设备管理外，也能阅读 azw／mobi／epub 等几乎所有电子书格式，另外还能实现各类格式的转换。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon39.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Reeder</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://reederapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Reeder 作为一个老牌 RSS 阅读器，虽然更新频率很低，但是非常稳定。支持 <a href="https://www.inoreader.com/" target="_blank" rel="external">Inoreader</a> 以及有丰富的快捷键，是我选择它的主要原因。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon28.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">PDF Expert</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://pdfexpert.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Readdle 开发的 PDF 阅读编辑工具。如果要给 macOS 上的 PDF 编辑器评个名次的话，PDF Expert 应当是当仁不让的第一。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon12.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Klib</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/cn/app/klib- 标注笔记管理 -for-kindle/id1196268448?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Kindle 阅读标注管理 App，支持多种导入、导出方式，可以同步到 Evernote，并且能跳转 Kindle for macOS 回顾标注的上下文。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon79.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Scapple</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.literatureandlatte.com/scapple.php" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p><a href="https://www.literatureandlatte.com/scrivener.php" target="_blank" rel="external">Scriverner</a> 开发者做的脑图工具，最大的特点是不需要先建立脑图结构，可以在白板上丢各种素材（包括文件），之后再建立联系。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon22.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">MindNode</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://mindnode.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>颜值很高的脑图工具，虽然功能未必有 XMind 全，但是颜值即正义！有 iOS 版，可以通过 iCloud 同步文档。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon73.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">OmniOutliner</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="mniOutliner](https://www.omnigroup.com" style="color:#fff;font-size:0.9em;text-decoration:none;">下载</a></div></div></span></div>
+
+<p>Omni 旗下强大的大纲应用。尽管许多笔记或脑图应用都能写大纲，但是都没有它可扩展性强——比如增加额外的栏和定义栏的取值类型。 </p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon58.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Evernote</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://evernote.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>虽然依然不支持 Markdown、富文本跨平台同步格式一团糟，但是依然是最为可靠的全平台图文资料库应用，毕竟「大象永远不会忘记」。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon45.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Bear</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://www.bear-writer.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>笔记界的网红，颜值甚高。我已经把自己所有的笔记从 Evernote 迁移了过来，Markdown 的标记文本让我再也不用为文本格式操心。唯二的不满，是跨平台和表格的缺失。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon81.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Ulysses</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.ulyssesapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>事实上自从习惯了 Bear 以后，Ulysses 就愈发失宠了。但它一些独特而贴心的输入体验细节，让我有时会用它写点笔记以外的东西。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon41.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">MWeb</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://zh.mweb.im" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>写静态博客的不二之选，支持实时将图片上传至图床并插入文章，还支持发布到各种博客平台以及 Evernote。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon53.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Day One</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://dayoneapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>在 Apple 的设备上，想不出还有比 Day One 更适合写日记的应用了。它有个特别之处在于，会调用设备的接口，把诸如天气、位置、运动量等种种信息都记录下来。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon17.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Typora</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://typora.io" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>非常简约的 Markdown 编辑器，非常喜欢它把「所见即所得」和「纯文本编辑」分为两种模式而非两栏的做法，适合简单编辑 md 文件和快速记录一些东西。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon21.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Marked</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://marked2app.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Markdown 文件预览工具，能自定义样式预览，还支持编辑 md 文件时实时进行效果预览。</p>
+<h3 id="社交应用"><a href="# 社交应用" class="headerlink" title="社交应用"></a>社交应用 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon77.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">QQ</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://im.qq.com/macqq/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>Mac 版 QQ 要比 Win 版的清爽和顺眼不少，也正因此，腾讯官方说轻聊版的 <a href="http://tim.qq.com/" target="_blank" rel="external">Tim</a> 不会有 macOS 版。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon83.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">WeChat</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://appstore.com/mac/WeChat" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Mac 版的微信倒并不比 Win 版强多少，很多 Feature 都是 Win 版先上。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon42.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Slack</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://slack.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>国外很火的团队沟通工具，channel 的特性和丰富的 bot 让它非常适合团队沟通协作。不过这类工具的天然壁垒就是，很难说服国内那些常年使用 QQ 的团队相信，这是种更高效的沟通工具。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon89.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Telegram</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://telegram.org" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>大陆的舆论环境近来是每况愈下，即使个人聊天工具，也要受老大哥监控，呵呵。Telegram 因其开放不设限的群组，在国内小圈子里还是很受欢迎的。附李如一制作的 <a href="https://blog.yitianshijie.net/2017/03/31/im-apps-security-check-v1point1/" target="_blank" rel="external"> 聊天软件安全图例谱</a>。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon31.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Tweetbot</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://tapbots.com/tweetbot/mac/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Tapbot 开发的 <a href="http://twitter.com" target="_blank" rel="external">Twitter</a> 第三方客户端，能分栏浏览各种订阅的列表是 Tweetbot 相较网页版的一大优势。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon84.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Maipo</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://itunes.apple.com/cn/app/maipo- 极致微博体验 /id789066512?mt=12" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Mac 上的微博客户端好像并不多，Maipo 绝对是其中的佼佼者，何况还免费，夫复何求。</p>
+<h3 id="开发工具"><a href="# 开发工具" class="headerlink" title="开发工具"></a>开发工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon85.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Xcode</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://developer.apple.com/cn/xcode/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>曾发微博说，有两个日常折磨我的「杀手级」应用——内存杀手 Chrome、硬盘杀手 Xcode 🤷‍♀️。但是 iOS 开发，你冇得拣呐。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon50.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Visual Studio Code</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://code.visualstudio.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>作为一个 Sublime 党，眼见着开源免费的 VS Code 稳定性、插件生态日渐完善，果断地投敌了。唯一的不满是，相较前者启动速度还是要慢不少。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon11.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">iTerm</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.iterm2.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>macOS 上最强大的终端应用，没有之一。iTerm2 之于原生 Terminal，就好比 Chrome 之于 IE。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon26.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">OhMyStar</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://ohmystarapp.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>两位国内开发者出品的 Github 标星 repo 管理工具，可以无缝同步你在 Github 标星的所有 repo，以供本地浏览和搜索。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon15.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Dash</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://kapeli.com/dash" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>强大的接口文档检索和代码片段管理工具，对写代码效率的提升应该是成倍的。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon4.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Chrome</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.google.com/chrome/browser/desktop/index.html" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>在强忍了 Chrome 对 Mac 内存和风扇的百般摧残一年多以后，终于下定决心迁移到 Safari，而只用 Chrome 做开发调试相关的用途了。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon75.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Postman</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.getpostman.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>查询和开发接口的利器，免费好用。</p>
+<h3 id="设计工具"><a href="# 设计工具" class="headerlink" title="设计工具"></a>设计工具 </h3><div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/Sketch_logo_frame.svg.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Postman</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.sketchapp.com/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>软件 UI 界应该没有比 Sketch 风头更劲的设计工具了，推荐一个提升效率的应用内启动器插件 <a href="sketchrunner.com/">Sketch Runner</a>。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon32.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Zoommy</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://zoommyapp.com/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>一个聚合了 Unsplash 等 n 个知名高清、无版权图库的资源库 App，可以说是设计师和媒体工作者必备利器了。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon57.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Eagle</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://eagle.cool/macOS" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>试用过 <a href="https://inboardapp.com/" target="_blank" rel="external">Inboard</a>、<a href="http://www.littlehj.com" target="_blank" rel="external">Pixave</a> 等多个设计灵感／素材管理工具后，总觉得或多或少有些缺憾。Eagle 与前两者相比，算是目前完成度最高的，更重要的是——它更新频率非常高。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/AppIcon87.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Sip</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://sipapp.io" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>异常强大的取色工具，不仅可以为取色值生成 Hex／RGB 等不同格式，还有历史取色 Dock 栏、多点取色生成配色方案等实用功能。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon37.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Framer</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://framer.com/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>高保真原型工具，使用 coffee script 来操作界面元素，这使得它可以被用来制作实现高保真、可交互的产品原型。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon88.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">RightFont</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://rightfontapp.com/cn/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>字体管理 App，可用来预览、同步、安装和管理字体文件，还能无缝配合 Sketch 等设计应用使用。国内有个同类免费软件叫<a href="http://www.hellofont.cn" target="_blank" rel="external">「字由」</a>，只是还在公测，不太稳定。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon61.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">IconJar</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://geticonjar.com/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Icon 素材管理工具，可以方便地批量导入、导出图标，尤其适合管理 svg 格式的图标。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon64.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Icon8</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://icons8.com/app/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>和 IconJar 一样，是个图标管理工具。不同的是自带数万个免费图标，可以免费使用最大 100*100px 的 png 格式图标。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/cc_app.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">InDesign / Photoshop / Lightroom</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="www.adobe.com/cn/" style="color:#fff;font-size:0.9em;text-decoration:none;">下载</a></div></div></span></div>
+
+<p>Adobe 套装，我觉得在上述三个 App 的领域里，论及功能性与可用性的平衡，还没有能出其右的工具。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon14.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">Polarr</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.polarr.co/" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>泼辣修图算是近年来一个不错的图像处理软件，虽然在批处理上和 Lightroom 依然没得比，但轻量修图的话也够用了。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon72.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">OmniGraffle</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://www.omnigroup.com/omnigraffle" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
+
+<p>Omni 旗下大名鼎鼎的矢量绘图工具，可以用来绘制各种图表、线框图、流程图以及插图等。很多产品狗不习惯 macOS 没有 Visio，那只是因为他们没有接触过 OmniGraffle。</p>
+<div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon87%202.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">墨刀 </div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://modao.cc" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
+
+<p>和绝大多数产品狗不一样，我第一个上手用的原型工具不是 Axure，而是元一团队做的「墨刀」，并且也不愿意再更换使用前者，因为它实在是更快、更好用。</p>
+
+
+                <hr>
+
+                
+
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/jike/" data-toggle="tooltip" data-placement="top" title="对「即刻」产品思路的一点思考">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
+
+                
+
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
+                
+
+            </div>
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <!-- no hr -->
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+                       
+                          <a class="tag" href="/tags/#工具" title="工具">工具</a>
+                        
+                          <a class="tag" href="/tags/#mac" title="mac">mac</a>
+                        
+                    </div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+
+                    
+                        <li><a href="http://foo.github.io/" target="_blank">墨迹</a></li>
+                    
+                        <li><a href="http://bar.github.io" target="_blank">Steven</a></li>
+                    
+                </ul>
+                
+            </div>
+
+        </div>
+    </div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "zoomyale";
+    var disqus_identifier = "https://zoomyale.com/2017/setup_mac/";
+    var disqus_url = "https://zoomyale.com/2017/setup_mac/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("https://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                
+                
+                    <li>
+                        <a target="_blank" href="https://twitter.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+                
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/zoomyale">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
+
+                
+
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 也而的博客 2017 
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    <span style="display: inline-block; margin: 0 5px;">
+                        <i class="fa fa-heart"></i>
+                    </span> 
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/js/bootstrap.min.js"></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/hux-blog.min.js"></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("https://zoomyale.com/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("https://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-74749167-1';
+    var _gaDomain = 'zoomyale.com';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '1e83e209a1c52b1cab02a3f86ec4da00';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+        var P = $('div.post-container'),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;    
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="https://zoomyale.com/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

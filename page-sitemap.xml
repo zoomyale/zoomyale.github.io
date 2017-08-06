@@ -7,6 +7,13 @@
     </url>
     
     <url>
+        <loc>https://zoomyale.com/about/</loc>
+        <lastmod>2017-06-13T12:11:59.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
         <loc>https://zoomyale.com/archive/</loc>
         <lastmod>2017-06-05T01:35:45.000Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -16,13 +23,6 @@
     <url>
         <loc>https://zoomyale.com/tags/</loc>
         <lastmod>2017-06-03T15:13:16.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <url>
-        <loc>https://zoomyale.com/about/</loc>
-        <lastmod>2017-06-03T14:26:01.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
