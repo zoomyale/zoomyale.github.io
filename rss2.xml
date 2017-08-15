@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个工具癖、伪极客和成长中的产品汪</description>
-    <pubDate>Sun, 06 Aug 2017 15:27:56 GMT</pubDate>
+    <pubDate>Mon, 07 Aug 2017 14:49:59 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -33,7 +33,7 @@
 <p>macOS Sierra 的改键神器，特别适用于非常规键位布局的外接键盘，另外它还能让不同的键盘使用不同的配置。Sierra 以前的版本可以使用 <a href="https://pqrs.org/osx/karabiner/" target="_blank" rel="external">Karabiner</a>。</p>
 <div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/009b445e-6ab1-e011-9727-0025902c7e73_2_full.png.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">SwitchResX</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="http://www.madrau.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
 
-<p>屏幕分辨率修改工具，强大之处在于开启 HiDPI 模式后，能使 2K/4K 高分辨率外显的 UI 比例接近 Retina 屏。开启方式可以参考：<a href="https://zhihu.com/question/35300978/answer/88073400" target="_blank" rel="external">Dell U2515 开启 HiDPI 教程</a>。</p>
+<p>屏幕分辨率修改工具，强大之处在于开启 HiDPI 模式后，能使 2K/4K 高分辨率外显的 UI 比例接近 Retina 屏。开启方式可以参考：<a href="https://zhihu.com/question/35300978/answer/88073400" target="_blank" rel="external">《Dell U2515 开启 HiDPI 教程》</a>。</p>
 <h2 id="最高优先级应用"><a href="# 最高优先级应用" class="headerlink" title="最高优先级应用"></a>最高优先级应用 </h2><p> 最高优先级的应用，是恢复正常使用 MacBook 的基础条件。基本上就是一些密码、文件同步和网络环境相关的 App。</p>
 <div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-top:2.8em;margin-bottom:-0.6em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/1password64.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">1Password</div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://1password.com" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external">下载</a></div></div></span></div>
 
