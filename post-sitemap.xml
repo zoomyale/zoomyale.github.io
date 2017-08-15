@@ -7,16 +7,8 @@
     </url>
 
     <url>
-        <loc>https://zoomyale.com/2017/setup_mac/</loc>
-        <lastmod>2017-08-07T14:49:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/how_to_download_video/</loc>
-        <lastmod>2017-06-04T15:44:33.000Z</lastmod>
+        <loc>https://zoomyale.com/2016/markplan/</loc>
+        <lastmod>2017-08-15T17:10:14.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -24,71 +16,7 @@
 
     <url>
         <loc>https://zoomyale.com/2016/why_blogging/</loc>
-        <lastmod>2017-06-04T15:43:00.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/ios_feedback_mail_in_swift/</loc>
-        <lastmod>2017-06-04T15:41:33.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/intro_to_frontend_3/</loc>
-        <lastmod>2017-06-04T15:38:14.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/intro_to_frontend_1/</loc>
-        <lastmod>2017-06-04T15:38:10.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/intro_to_frontend_2/</loc>
-        <lastmod>2017-06-04T15:37:59.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/markplan/</loc>
-        <lastmod>2017-06-04T15:29:49.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/jike/</loc>
-        <lastmod>2017-06-04T15:22:40.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/vultr_and_ss/</loc>
-        <lastmod>2017-06-04T15:10:36.000Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://zoomyale.com/2016/tools_creating_happiness/</loc>
-        <lastmod>2017-06-04T14:53:15.000Z</lastmod>
+        <lastmod>2017-08-15T17:10:09.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 
@@ -96,7 +24,79 @@
 
     <url>
         <loc>https://zoomyale.com/2016/preface/</loc>
-        <lastmod>2017-06-02T13:41:25.000Z</lastmod>
+        <lastmod>2017-08-15T17:10:08.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/how_to_download_video/</loc>
+        <lastmod>2017-08-15T17:10:07.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/tools_creating_happiness/</loc>
+        <lastmod>2017-08-15T17:09:56.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/intro_to_frontend_1/</loc>
+        <lastmod>2017-08-15T17:09:52.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2017/setup_mac/</loc>
+        <lastmod>2017-08-15T17:09:44.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/jike/</loc>
+        <lastmod>2017-08-15T17:09:43.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/vultr_and_ss/</loc>
+        <lastmod>2017-08-15T17:09:42.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/ios_feedback_mail_in_swift/</loc>
+        <lastmod>2017-08-15T17:09:40.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/intro_to_frontend_3/</loc>
+        <lastmod>2017-08-15T17:09:39.000Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://zoomyale.com/2016/intro_to_frontend_2/</loc>
+        <lastmod>2017-08-15T17:09:38.000Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
 

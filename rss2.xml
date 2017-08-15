@@ -8,7 +8,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个工具癖、伪极客和成长中的产品汪</description>
-    <pubDate>Mon, 07 Aug 2017 14:49:59 GMT</pubDate>
+    <pubDate>Tue, 15 Aug 2017 17:09:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -276,6 +276,7 @@
 <div><span style="display:flex;border:1px solid #DBE2E8;border-radius:3px;padding:1.4em;background-color:#f9f9f9;margin-bottom:-0.8em;"><div style="display:block;margin-right:1.4em;padding:0px;"><img src="http://7xrasx.com1.z0.glb.clouddn.com/appicon87%202.png" style="margin:0em !important;"></div><div style="flex:auto;"><div style="display:block;font-weight:bold;">墨刀 </div><div style="display:block;position:relative;width:3em;margin-top:0.2em;padding:2px;background-color:#2c6cca;text-align:center;border:1px solid #f9f9f9;border-radius:4px;"><a href="https://modao.cc" style="color:#fff;font-size:0.9em;text-decoration:none;" target="_blank" rel="external"> 下载</a></div></div></span></div>
 
 <p>和绝大多数产品狗不一样，我第一个上手用的原型工具不是 Axure，而是元一团队做的「墨刀」，并且也不愿意再更换使用前者，因为它实在是更快、更好用。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2017/setup_mac/#disqus_thread</comments>
@@ -329,6 +330,7 @@
 <p>而且「即刻」还需要面对一个伴随产品形态的天然悖论：一方面，对新用户而言，关注甚至创建「提醒」所需的学习成本和使用意愿，形成了一定使用门槛。另一方面，如果不关注「提醒」就能获得良好的阅读体验的话，显然和个性化信息推送的理念背道而驰了。</p>
 <p>我不知道它能不能成功。但作为忠诚用户，我希望它能，甚至还存了一点私心的想象，希望它可以不改变内容气质，而试着去探索变现模式──既然活跃用户的忠诚度很高，可不可能以用户付费为主要盈利模式呢？我们可以为高质量的音乐付费，为 60s 的回答付费，能不能也为高质量和低信噪比的资讯付费呢？不过这到底是一点个人的想象罢了，毕竟教育市场的试错成本太高了。</p>
 <p>总之，希望 2017 年「即刻」能做越好吧。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/jike/#disqus_thread</comments>
@@ -461,6 +463,7 @@
 <li><a href="http://www.777s.me/serverspeeder-config.html" target="_blank" rel="external">Serverspeeder 锐速 config 配置文件详解</a></li>
 <li><a href="https://teddysun.com/342.html" target="_blank" rel="external">Shadowsocks Python 版一键安装脚本</a></li>
 </ul>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/vultr_and_ss/#disqus_thread</comments>
@@ -501,6 +504,7 @@
 <p>「马克计划」的工作流首先让你制定一个明确的目标（Specific）。这个目标可以被拆分为具体可行的项目（Attainable），同时这些项目又是具有进度（Measurable）且相关（Relevant）的。最后，这些项目都要求能在一定期限内（Time-bound）被实现。</p>
 <p>因而，在理想状态下，使用「马克计划」去管理你的个人项目，是 <strong> 有助于更好地安排个人时间、实现既定目标的</strong>。当然，首先，你得是一个愿意制定目标并乐于自我驱动的人。</p>
 <p>现在你可以在 <strong>App Store</strong> 中免费下载<strong><a href="https://markplan.info" target="_blank" rel="external">「马克计划」</a></strong>。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/markplan/#disqus_thread</comments>
@@ -554,6 +558,7 @@
 <figure class="highlight swift"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> infoDic = <span class="type">NSBundle</span>.mainBundle().infoDictionary</div><div class="line"></div><div class="line"><span class="comment">// 获取 App 的版本号</span></div><div class="line"><span class="keyword">let</span> appVersion = infoDic?[<span class="string">"CFBundleShortVersionString"</span>]</div><div class="line"><span class="comment">// 获取 App 的 build 版本</span></div><div class="line"><span class="keyword">let</span> appBuildVersion = infoDic?[<span class="string">"CFBundleVersion"</span>]</div><div class="line"><span class="comment">// 获取 App 的名称</span></div><div class="line"><span class="keyword">let</span> appName = infoDic?[<span class="string">"CFBundleDisplayName"</span>]</div></pre></td></tr></table></figure>
 <p>到这里，一个调用 <code>MFMailComposeViewController</code> 的 iOS 邮件反馈就基本写完了。运行的时候，要注意用虚拟器的话可能会报错，测试需要真机环境。效果如下。</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/9485-2433d26cfb269dd7.gif?imageMogr2/auto-orient/strip" alt="demo"></p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/ios_feedback_mail_in_swift/#disqus_thread</comments>
@@ -589,6 +594,7 @@
 <p>说它实用是因为，视频网站通常会分段传输较长的视频，这会导致——如果你使用 Video Downloader Professional，需要下载好几个被切割的视频段。而硕鼠则比较贴心地提供了 <code>下载并合并分段视频 </code> 的功能，由此省去了一个自行合并视频的操作。</p>
 <h3 id="2-4- 专破优酷等网站的 -Video-Downloader"><a href="#2-4- 专破优酷等网站的 -Video-Downloader" class="headerlink" title="2.4 专破优酷等网站的 Video-Downloader"></a>2.4 专破优酷等网站的 Video-Downloader</h3><p><a href="https://github.com/EvilCult/Video-Downloader" target="_blank" rel="external">Video-Downloader</a> 是 @EvilCult 同学在 Github 发布的一款可以获取 Youku、乐视、爱奇艺等视频源文件地址的工具，有 Mac、Linux 以及 Windows 客户端。最大的优势在于破解了优酷等网站的加密规则。</p>
 <p>只需要把视频网站的地址贴进应用，就可以获得下载链接，但一些网站（比如优酷）仍然只能获取到分段视频。此外，作者自己也忍不住吐槽自己了：「就是丑！！！界面巨丑，不能再丑。不过就是单纯的娱乐一下，有兴趣就更新下……」</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/how_to_download_video/#disqus_thread</comments>
@@ -655,9 +661,54 @@
 <li>链接：<a href="http://www.amazon.co.jp/Amazon-DP75SDI-Kindle-Paperwhite-Wi-Fi/dp/B00QJDOM6U/ref=sr_1_1?ie=UTF8&amp;qid=1461221865&amp;sr=8-1&amp;keywords=kindle+paperwhite" target="_blank" rel="external">日亚</a></li>
 </ul>
 <p>关于 Kindle，似乎不用做过多的介绍了。读书的时候，曾经走到哪带到哪，连出门吃个饭也要揣怀里。工作以后，能安安心心捧着它读书的机会已经不多了，曾经的 EDC 也有了吃灰的势头。有时候想静静翻看一阵，总是被杂务打断，慢慢地就没有那样的闲暇和心情，去整日整日地挥霍在读书上了。这时候就想呀，如果能找个周末，脑袋放空，晒晒太阳看看书，真是再幸福不过了。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/tools_creating_happiness/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>前端入门篇 2：利用 Div+CSS 快速布局页面</title>
+      <link>https://zoomyale.com/2016/intro_to_frontend_2/</link>
+      <guid>https://zoomyale.com/2016/intro_to_frontend_2/</guid>
+      <pubDate>Sat, 02 Apr 2016 16:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;在各类智能手机和平板出现前的很长一段时间里，Web 网页都是通过表格进行布局的。由于表格在视觉呈现上的直观，早期很多 WYSIWYG（所见即所得）的网页设计软件通常也多使用表格。&lt;/p&gt;
+&lt;p&gt;但是这种布局方式有很大的局限性——比如，同一行或列的单元格在长度、宽度上会相互影
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>在各类智能手机和平板出现前的很长一段时间里，Web 网页都是通过表格进行布局的。由于表格在视觉呈现上的直观，早期很多 WYSIWYG（所见即所得）的网页设计软件通常也多使用表格。</p>
+<p>但是这种布局方式有很大的局限性——比如，同一行或列的单元格在长度、宽度上会相互影响和制约等。如今，表格式布局早已不再流行，本文就此介绍将其「拍死在沙滩上」、目前最为广泛采用的网页布局方式——Div + CSS。</p>
+<h2 id="1- 什么是 Div-CSS"><a href="#1- 什么是 Div-CSS" class="headerlink" title="1 什么是 Div+CSS"></a>1 什么是 Div+CSS</h2><p>所谓 Div + CSS, 是指通过 HTML「层」标签——<code>&lt;div&gt;&lt;/div&gt;</code>, 辅以 CSS 中对该「层」宽度、排列等样式的定义，来实现网页布局的一种方式。如果你不懂什么是 CSS 和 HTML，可以参考 <a href="http://www.jianshu.com/p/a981158df5a8" target="_blank" rel="external"> 前端入门篇（一）：如何把设计稿还原成真实网页</a>。</p>
+<h2 id="2- 为什么要用 Div"><a href="#2- 为什么要用 Div" class="headerlink" title="2 为什么要用 Div"></a>2 为什么要用 Div</h2><p>为什么要用 Div 取代 Table？一言以蔽之：灵活。</p>
+<p>Table 的格式其实是一定的——首先要有一个表格，其次表格里要有行，每一行又分为许多列(单元格)。如果在同一行的某个单元格中，要布局放入更多内容，而左右两边的单元格不变的话，要怎么实现？</p>
+<p>只能在单元格里再嵌套一个表格。如果嵌套层数少那还好，一旦层数多起来，绝逼要疯。这还是不涉及修改的情况。如果某天你老板拍脑袋说，把登陆模块给我从右边移到左边，你就等着加班吧。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-f742ec1fa19f85ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Tabel 嵌套示意"></p>
+<p>与之相对地，用 Div 布局就远为灵活。首先，每一个 <code>&lt;div&gt;&lt;/div&gt;</code> 中都可以嵌入另外一个或几个<code>&lt;div&gt;&lt;/div&gt;</code>, 子子孙孙可无穷尽也。另外，要修改某个 Div 的布局位置，也只需要相应的调整其 CSS 样式即可。</p>
+<h2 id="3- 如何连接 Div 和 CSS"><a href="#3- 如何连接 Div 和 CSS" class="headerlink" title="3 如何连接 Div 和 CSS"></a>3 如何连接 Div 和 CSS</h2><p>但是 Div 所谓的灵活也并非随心所欲、胡乱排布，它也是遵守一定的排布规则的——事实上，它在排布上与 Table 还是有些相似的。具体来说，Table 的排布方式一般如下。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>而一般 Div 的排布方式也与之类似，只不过并没有表格 <code>&lt;table&gt;&lt;/table&gt;</code>、行<code>&lt;tr&gt;&lt;/tr&gt;</code>、单元格<code>&lt;td&gt;&lt;/td&gt;</code> 这许多层级，只是单一层级的 <code>&lt;div&gt;&lt;/div&gt;</code> 而已。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>那么问题来了，这些 Div 长得一毛一样啊，我怎么让浏览器知道它们是在什么位置的？这里就轮到 CSS 出场了。我们通过 CSS 样式的定义，再在 HTML 的 <code>&lt;div&gt;&lt;/div&gt;</code> 中调用这些样式，就可以实现 Div 和 CSS 的连接。</p>
+<p>举例来说，如果我们在 CSS 中声明了一个样式——<code>.row{width:100%;}</code>，那么在 HTML 中就可以注明某一或某些 Div 适用这一类，来调用这一样式。如下，第二层的 Div 就使用了 row 这个样式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="4- 将页面等分成 12 栏"><a href="#4- 将页面等分成 12 栏" class="headerlink" title="4 将页面等分成 12 栏"></a>4 将页面等分成 12 栏 </h2><p> 分栏布局是使用 Div+CSS 布局网页的一种主要布局方式，主要通过把页面等分成 12 栏来实现。为什么要分成 12 栏？话说网页被分成 12 栏也太恐怖了吧，在小点的屏幕上每一栏大概只有两个手指宽吧？啊喂，会引发密集恐惧症的吧？</p>
+<p>等等，你先别急，先来想想一般你看到的网站都会分成几栏？一栏？有的。两栏？也有。三栏？这个好像还比较常见。四栏？这个也比较常见。栏数再加下去也不是没有，但是就像之前说的，恐怕要引发密恐了。</p>
+<p>那么这几个数字和 12 有什么关系呢？很简单，都能整除 12。所以说，把页面分成 12 栏的好处就是——能利用合并栏来将页面等分成 2、3、4 栏，如下图。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-4ce44fc341d7dee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12 栏页面布局"></p>
+<p>而在利用这个 <strong>12 column grid</strong> 以后，在使用 CSS 布局上也会有非常大的好处。具体是什么好处呢？我们来直接看代码的实例吧。首先我们在 CSS 中，定义如下样式。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.row &#123;</div><div class="line">	width:100%;</div><div class="line">	display:flex; /* 这是为了让同一 row 中的 Div 横向排列而不是默认的纵向 */</div><div class="line">&#125;</div><div class="line">.col-1 &#123;</div><div class="line">	width: 8.33%;</div><div class="line">&#125;</div><div class="line">.col-2 &#123;</div><div class="line">	width: 16.67%;</div><div class="line">&#125;</div><div class="line">.col-3 &#123;</div><div class="line">	width: 25%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 继续 col-4,col-5 一直定义下去直到 col-12，具体省略 */</div><div class="line"></div><div class="line">.col-12 &#123;</div><div class="line">	width:100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>有了这些不同宽度的 column 样式定义，我们就可以开始自由地排列页面中的 Div 啦，举例来说，假设下边图中的黑框就是我们网页中要布局的层，那我们就可以用其下的代码来实现。</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/9485-63910b91f0ac9f95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="假设图中黑框是 Div"></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-7”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-5”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-12”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>怎么样，很简单吧？</p>
+<p>关于 Div+CSS 布局网页的好处，除了上文所述外，还有就是能应用于响应式（Responsive）页面。至于什么是响应式页面以及如何适配，请移步 <a href="http://www.jianshu.com/p/599d5134ce65" target="_blank" rel="external"> 前端入门篇（三）：响应式网页设计 101</a>。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
+]]></content:encoded>
+      
+      <comments>https://zoomyale.com/2016/intro_to_frontend_2/#disqus_thread</comments>
     </item>
     
     <item>
@@ -711,52 +762,10 @@
 <li><a href="https://www.udacity.com/course/responsive-web-design-fundamentals--ud893" target="_blank" rel="external">Udacity: Responsive Web Design Fundamentals</a></li>
 <li><a href="https://www.udacity.com/course/javascript-basics--ud804" target="_blank" rel="external">Udacity: JavaScript Basics</a></li>
 </ul>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/intro_to_frontend_3/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>前端入门篇 2：利用 Div+CSS 快速布局页面</title>
-      <link>https://zoomyale.com/2016/intro_to_frontend_2/</link>
-      <guid>https://zoomyale.com/2016/intro_to_frontend_2/</guid>
-      <pubDate>Sat, 02 Apr 2016 16:00:00 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;在各类智能手机和平板出现前的很长一段时间里，Web 网页都是通过表格进行布局的。由于表格在视觉呈现上的直观，早期很多 WYSIWYG（所见即所得）的网页设计软件通常也多使用表格。&lt;/p&gt;
-&lt;p&gt;但是这种布局方式有很大的局限性——比如，同一行或列的单元格在长度、宽度上会相互影
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>在各类智能手机和平板出现前的很长一段时间里，Web 网页都是通过表格进行布局的。由于表格在视觉呈现上的直观，早期很多 WYSIWYG（所见即所得）的网页设计软件通常也多使用表格。</p>
-<p>但是这种布局方式有很大的局限性——比如，同一行或列的单元格在长度、宽度上会相互影响和制约等。如今，表格式布局早已不再流行，本文就此介绍将其「拍死在沙滩上」、目前最为广泛采用的网页布局方式——Div + CSS。</p>
-<h2 id="1- 什么是 Div-CSS"><a href="#1- 什么是 Div-CSS" class="headerlink" title="1 什么是 Div+CSS"></a>1 什么是 Div+CSS</h2><p>所谓 Div + CSS, 是指通过 HTML「层」标签——<code>&lt;div&gt;&lt;/div&gt;</code>, 辅以 CSS 中对该「层」宽度、排列等样式的定义，来实现网页布局的一种方式。如果你不懂什么是 CSS 和 HTML，可以参考 <a href="http://www.jianshu.com/p/a981158df5a8" target="_blank" rel="external"> 前端入门篇（一）：如何把设计稿还原成真实网页</a>。</p>
-<h2 id="2- 为什么要用 Div"><a href="#2- 为什么要用 Div" class="headerlink" title="2 为什么要用 Div"></a>2 为什么要用 Div</h2><p>为什么要用 Div 取代 Table？一言以蔽之：灵活。</p>
-<p>Table 的格式其实是一定的——首先要有一个表格，其次表格里要有行，每一行又分为许多列(单元格)。如果在同一行的某个单元格中，要布局放入更多内容，而左右两边的单元格不变的话，要怎么实现？</p>
-<p>只能在单元格里再嵌套一个表格。如果嵌套层数少那还好，一旦层数多起来，绝逼要疯。这还是不涉及修改的情况。如果某天你老板拍脑袋说，把登陆模块给我从右边移到左边，你就等着加班吧。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/9485-f742ec1fa19f85ec.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="Tabel 嵌套示意"></p>
-<p>与之相对地，用 Div 布局就远为灵活。首先，每一个 <code>&lt;div&gt;&lt;/div&gt;</code> 中都可以嵌入另外一个或几个<code>&lt;div&gt;&lt;/div&gt;</code>, 子子孙孙可无穷尽也。另外，要修改某个 Div 的布局位置，也只需要相应的调整其 CSS 样式即可。</p>
-<h2 id="3- 如何连接 Div 和 CSS"><a href="#3- 如何连接 Div 和 CSS" class="headerlink" title="3 如何连接 Div 和 CSS"></a>3 如何连接 Div 和 CSS</h2><p>但是 Div 所谓的灵活也并非随心所欲、胡乱排布，它也是遵守一定的排布规则的——事实上，它在排布上与 Table 还是有些相似的。具体来说，Table 的排布方式一般如下。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">table</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">tr</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">td</span>&gt;</span><span class="tag">&lt;/<span class="name">td</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">tr</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">table</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>而一般 Div 的排布方式也与之类似，只不过并没有表格 <code>&lt;table&gt;&lt;/table&gt;</code>、行<code>&lt;tr&gt;&lt;/tr&gt;</code>、单元格<code>&lt;td&gt;&lt;/td&gt;</code> 这许多层级，只是单一层级的 <code>&lt;div&gt;&lt;/div&gt;</code> 而已。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>那么问题来了，这些 Div 长得一毛一样啊，我怎么让浏览器知道它们是在什么位置的？这里就轮到 CSS 出场了。我们通过 CSS 样式的定义，再在 HTML 的 <code>&lt;div&gt;&lt;/div&gt;</code> 中调用这些样式，就可以实现 Div 和 CSS 的连接。</p>
-<p>举例来说，如果我们在 CSS 中声明了一个样式——<code>.row{width:100%;}</code>，那么在 HTML 中就可以注明某一或某些 Div 适用这一类，来调用这一样式。如下，第二层的 Div 就使用了 row 这个样式。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<h2 id="4- 将页面等分成 12 栏"><a href="#4- 将页面等分成 12 栏" class="headerlink" title="4 将页面等分成 12 栏"></a>4 将页面等分成 12 栏 </h2><p> 分栏布局是使用 Div+CSS 布局网页的一种主要布局方式，主要通过把页面等分成 12 栏来实现。为什么要分成 12 栏？话说网页被分成 12 栏也太恐怖了吧，在小点的屏幕上每一栏大概只有两个手指宽吧？啊喂，会引发密集恐惧症的吧？</p>
-<p>等等，你先别急，先来想想一般你看到的网站都会分成几栏？一栏？有的。两栏？也有。三栏？这个好像还比较常见。四栏？这个也比较常见。栏数再加下去也不是没有，但是就像之前说的，恐怕要引发密恐了。</p>
-<p>那么这几个数字和 12 有什么关系呢？很简单，都能整除 12。所以说，把页面分成 12 栏的好处就是——能利用合并栏来将页面等分成 2、3、4 栏，如下图。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/9485-4ce44fc341d7dee7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="12 栏页面布局"></p>
-<p>而在利用这个 <strong>12 column grid</strong> 以后，在使用 CSS 布局上也会有非常大的好处。具体是什么好处呢？我们来直接看代码的实例吧。首先我们在 CSS 中，定义如下样式。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.row &#123;</div><div class="line">	width:100%;</div><div class="line">	display:flex; /* 这是为了让同一 row 中的 Div 横向排列而不是默认的纵向 */</div><div class="line">&#125;</div><div class="line">.col-1 &#123;</div><div class="line">	width: 8.33%;</div><div class="line">&#125;</div><div class="line">.col-2 &#123;</div><div class="line">	width: 16.67%;</div><div class="line">&#125;</div><div class="line">.col-3 &#123;</div><div class="line">	width: 25%;</div><div class="line">&#125;</div><div class="line"></div><div class="line">/* 继续 col-4,col-5 一直定义下去直到 col-12，具体省略 */</div><div class="line"></div><div class="line">.col-12 &#123;</div><div class="line">	width:100%;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>有了这些不同宽度的 column 样式定义，我们就可以开始自由地排列页面中的 Div 啦，举例来说，假设下边图中的黑框就是我们网页中要布局的层，那我们就可以用其下的代码来实现。</p>
-<p><img src="http://upload-images.jianshu.io/upload_images/9485-63910b91f0ac9f95.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="假设图中黑框是 Div"></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-7”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-5”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-12”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“row”</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">“col-3”</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div></pre></td></tr></table></figure>
-<p>怎么样，很简单吧？</p>
-<p>关于 Div+CSS 布局网页的好处，除了上文所述外，还有就是能应用于响应式（Responsive）页面。至于什么是响应式页面以及如何适配，请移步 <a href="http://www.jianshu.com/p/599d5134ce65" target="_blank" rel="external"> 前端入门篇（三）：响应式网页设计 101</a>。</p>
-]]></content:encoded>
-      
-      <comments>https://zoomyale.com/2016/intro_to_frontend_2/#disqus_thread</comments>
     </item>
     
     <item>
@@ -784,7 +793,7 @@
 <h3 id="2-2-HTML"><a href="#2-2-HTML" class="headerlink" title="2.2 HTML"></a>2.2 HTML</h3><p>HTML 是一种网页标记语言。它主要是利用标签来告诉浏览器，标签之间的东西是什么——是标题、段落、图片还是链接等。浏览器则会根据 HTML 标签，相应地作出显示。下面举几个栗子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是 1 级标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“这是链接地址”</span>&gt;</span> 这是链接的文字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">“这是图片的路径或链接地址”/</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="2-3-CSS"><a href="#2-3-CSS" class="headerlink" title="2.3 CSS"></a>2.3 CSS</h3><p>CSS 中文名叫做「层叠样式表」，从名字里就可以看出，它是一种声明样式的文档。我们可以通过链接外部 css 文档，或者将样式写在 HTML 文档的 <code>&lt;head&gt;&lt;/head&gt;</code> 标签中，抑或在 HTML 标签中内嵌属性 <code>style=&quot;&quot;</code> 来实现对样式的定义。举个例子，我们要让 <code>&lt;p&gt; 这个段落 &lt;/p&gt;</code> 的背景变成灰色，就可以用以下三种方法实现：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* 方法一：直接用 style 属性 */</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">“background-color:grey;”</span>&gt;</span>这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法二：在 HTML 文档的<span class="tag">&lt;<span class="name">head</span>&gt;</span> 标签中声明（会应用于页面中所有的 <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> 段落）*/</div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">	p&#123;</div><div class="line">	background-color:grey;</div><div class="line">	&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法三：通过外链实现 */</div><div class="line">// 另建一个 css 文档，在其中写上方法二中 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml"> 标签间的内容，再在 HTML 文档中作如下声明</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">“css 文档的路径”</span> <span class="attr">rel</span>=<span class="string">“stylesheet</span>"<span class="attr">type</span>=<span class="string">“text/css”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* 方法一：直接用 style 属性 */</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">“background-color:grey;”</span>&gt;</span>这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法二：在 HTML 文档的<span class="tag">&lt;<span class="name">head</span>&gt;</span> 标签中声明（会应用于页面中所有的 <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> 段落）*/</div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">	<span class="selector-tag">p</span>&#123;</div><div class="line">	<span class="attribute">background-color</span>:grey;</div><div class="line">	&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法三：通过外链实现 */</div><div class="line">// 另建一个 css 文档，在其中写上方法二中 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml"> 标签间的内容，再在 HTML 文档中作如下声明</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">“css 文档的路径”</span> <span class="attr">rel</span>=<span class="string">“stylesheet</span>"<span class="attr">type</span>=<span class="string">“text/css”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="3- 网页上的框"><a href="#3- 网页上的框" class="headerlink" title="3 网页上的框"></a>3 网页上的框 </h2><p> 代码语言只是前端开发实现的基础工具，要还原一个网页视觉稿，你还需要掌握以下的方法，并且记住——网页上的所有东西都盛放在框中。</p>
 <h3 id="3-1-Chrome 开发者工具"><a href="#3-1-Chrome 开发者工具" class="headerlink" title="3.1 Chrome 开发者工具"></a>3.1 Chrome 开发者工具</h3><p>Chrome 开发者工具是对前端开发最有用的神器，对，没有之一。它不仅可以让你看到网页的源码，每个元素的样式、构成，还能让你编辑源码并且实时查看页面效果。</p>
 <p>你可以在 Chrome 的菜单栏中，点击 <code> 更多工具 &gt; 开发者工具 </code> 打开开发者工具，也可以在网页任意位置右击，点击 <code> 检查 </code> 打开。打开后，可以同时看到网页页面和开发者工具窗口。其中开发者工具左半边是 HTML 的源码，里面有各种各样的元素，右边显示的是你在左半边选择的元素的样式。</p>
@@ -809,6 +818,7 @@
 <li>保存代码，在浏览器中打开，检查和设计稿的差距，调整代码</li>
 <li>重复 4-6 步直到还原设计稿</li>
 </ol>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/intro_to_frontend_1/#disqus_thread</comments>
@@ -910,6 +920,7 @@
 <p>而上文提到的 <a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a> 是湾湾同胞开发的静态博客框架，基于 Node.js，相较于 Jekyll，页面渲染生成更快，配置部署也更为简单。具体详尽的设置教程，Win 可以参考这篇→<a href="http://www.jianshu.com/p/05289a4bc8b2" target="_blank" rel="external">如何搭建一个独立博客——简明 Github Pages 与 Hexo 教程</a>，Mac 可以参考这篇→<a href="http://www.jianshu.com/p/fd878edb95e7#" target="_blank" rel="external">MAC 上 github + hexo 搭建博客教程</a>。</p>
 <p>除了上述两种框架外，还有 <a href="http://octopress.org/" target="_blank" rel="external">Octopress</a> 等其他基于 GitHub Page 的博客框架。有兴趣的话可以横向对比探索。另外要善用 GitHub Page 的话，可能还需要掌握一些 Git 相关的知识，这点可以参考廖雪峰老师的→<a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">Git 教程 </a>，或者<a href="https://www.udacity.com/" target="_blank" rel="external">Udacity</a> 的线上课程→<a href="https://www.udacity.com/course/how-to-use-git-and-github--ud775" target="_blank" rel="external">How to use Git and GitHub</a>。</p>
 <p>不过 GitHub Page 也并非完美无缺，至少在墙内使用的话，面临的一大问题是无法被百度收录。因为 GitHub 禁用了百度爬虫。据说是因为百度爬虫爬得太凶猛，已经对 GitHub 可用性造成了影响。好吧，又多了一个和百度说再见的理由。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/why_blogging/#disqus_thread</comments>
@@ -937,6 +948,7 @@
 <p> 再后来，各种新兴内容分发平台层出不穷。不过那都与我无关了，我早已没有能力和耐心，去作篇完整的长文章了。十数年后的今天，我放弃了写作的梦想，又抛下了成为编辑匠人的执念，尔后还背离了做个硬派新闻人的想法，时光流转，好像没有什么能再激起我的写作欲望了。</p>
 <p> 直到不久前，我从抽屉里翻到了十几岁时的草稿本，写得密密麻麻的。胡乱看了几页，有点惊讶于那时的自己，关心之广而又无知无畏。这多少给了我一点触动，让我想起自己也曾有过的模糊梦想。才开始明白荒废写作的这几年里，原来阻碍自己写下去的东西，从来就不是什么技术，也不是什么产品或工具。</p>
 <p> 我看着那些字迹模糊、涂了又改的手稿，想起那时候，彻夜不眠，盘膝坐在地上，就着昏暗的床头灯，俯在床头柜上奋笔疾书。尽管那样的光景似乎还清晰在眼前，但我早已经忘记是什么在驱使着我。不论是荷尔蒙，抑或别的什么，那似乎都是遥远的过去了。不过现在，七八年后不再躁动的现在，我想再试试，试试找回十几岁时的那种冲动。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/sponsor-1.png" alt="Sponsor"></p>
 ]]></content:encoded>
       
       <comments>https://zoomyale.com/2016/preface/#disqus_thread</comments>
