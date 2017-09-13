@@ -8,8 +8,63 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个工具癖、伪极客和成长中的产品汪</description>
-    <pubDate>Tue, 15 Aug 2017 17:09:44 GMT</pubDate>
+    <pubDate>Wed, 13 Sep 2017 13:44:15 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>1Blocker，可能是目前最好用的 Safari 内容拦截应用 v2.0</title>
+      <link>https://zoomyale.com/2017/1blocker/</link>
+      <guid>https://zoomyale.com/2017/1blocker/</guid>
+      <pubDate>Tue, 12 Sep 2017 16:00:00 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;自从苹果在 iOS 9 中开放了 Safari 内容拦截接口以后，内容拦截应用一度火爆一时。1Blocker 是最早的一批内容拦截应用之一，由两位国外独立开发者 &lt;a href=&quot;https://rinatkhanov.me&quot; target=&quot;_blank&quot; rel=&quot;ex
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>自从苹果在 iOS 9 中开放了 Safari 内容拦截接口以后，内容拦截应用一度火爆一时。1Blocker 是最早的一批内容拦截应用之一，由两位国外独立开发者 <a href="https://rinatkhanov.me" target="_blank" rel="external">Rinat Khanov</a>、<a href="https://twitter.com/khanov" title="Salavat Khanov" target="_blank" rel="external">Salavat Khanov</a> 开发，有 iOS 和 Mac 版本。因为一些独有的功能和优秀的表现，获得了很高的评价，堪称是目前最好用的 Safari 内容拦截应用。</p>
+<h2 id="内容拦截 -≠- 广告拦截"><a href="# 内容拦截 -≠- 广告拦截" class="headerlink" title="内容拦截 ≠ 广告拦截"></a>内容拦截 ≠ 广告拦截 </h2><p> 关于内容拦截，很多人会有个先入为主的错误认识：内容拦截 = 广告拦截。这多半是因为此类拦截应用，在宣传的时候都会打着「广告拦截」的名号。</p>
+<p>但真实情况并非如此——内容拦截是 Safari 区别于其他浏览器的一个 <a href="https://webkit.org/blog/3476/content-blockers-first-look/" target="_blank" rel="external"> 内置特性</a>。Safari 以外的浏览器，拦截广告的扩展多是基于 JavaScript 脚本的。浏览器在读取网页时要先载入这些脚本，会导致加载时间变长，消耗内存增多，造成电池损耗。</p>
+<p>而 Safari 的「内容拦截」则是通过 <strong> 预先将规则写入浏览器，来防止这些内容加载，以达到节省流量和加载时间的作用</strong>。能拦截的内容也不仅仅是广告，还包括追踪器、脚本、Cookies 和其他会拖慢加载速度的内容。 </p>
+<p>启用内容拦截应用的方式很简单——Mac 版需要安装 Safari 扩展，而 iOS 版只要在「设置 > Safari > 内容拦截器」中开启允许拦截即可。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/ipad-iphone.png" alt="ipad-iphone"></p>
+<p>1Blocker 内置了 9 组拦截规则组，包括广告拦截、追踪脚本、反广告拦截、社交分享组件、评论组件等。启用后，这些拦截规则就将作用于 Safari（包括原生应用中内嵌的 Safari）。 </p>
+<h2 id="高可玩性的自建规则"><a href="# 高可玩性的自建规则" class="headerlink" title="高可玩性的自建规则"></a>高可玩性的自建规则 </h2><p> 除了内置规则组外，1Blocker 还具备非常高可玩性的自建规则，这也是它配称作「好用」的主要原因之一。</p>
+<h3 id="选取拦截页面元素"><a href="# 选取拦截页面元素" class="headerlink" title="选取拦截页面元素"></a>选取拦截页面元素 </h3><p>1Blocker iOS 在之前的版本更新中，<strong> 加入了选取拦截页面元素的可视化编辑器</strong>。这是 1Blocker for iOS 里我最喜欢的功能，它使得 iOS 上「拦截页面元素」这个功能的易用性提升了数倍。</p>
+<p>举个例子来说，我们在浏览网页时，经常会看到该网站 App 的引流横幅，很影响阅读体验。这时候，就可以用 Safari 的 Share Sheets 呼出 1Blocker 的选择器，对要拦截的元素确认进行拦截。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/illustrate0.png" alt="illustrate0"></p>
+<p>虽然该功能还是 Beta 版，但是开发者已经做了不少可用性上的优化。比如由于页面元素的点选不可能很精准，所以提供了 <code>Narrow</code> 和 <code>Expand</code> 两个选项供你调整选区。</p>
+<h3 id="自定义 -URL- 和 -Cookies- 拦截"><a href="# 自定义 -URL- 和 -Cookies- 拦截" class="headerlink" title="自定义 URL 和 Cookies 拦截"></a>自定义 URL 和 Cookies 拦截 </h3><p> 除了隐藏元素，1Blocker 还可以添加自定义 URL 拦截，以及针对某些域名屏蔽 Cookies。声明这些规则时，需要用到「正则表达式」——一些用来描述字符规律的符号。</p>
+<p>如果你不熟悉正则表达式也不要紧，首先 App 中有一些符号的基本使用说明。另外，由于 Safari 内容拦截本身就反对使用过于复杂的正则表达式，所以你大概只需要知道要用 <code>\.</code> 来表示 <code>.</code>，<code>.*</code> 可以表示 URL 中的任意字符（或者没有字符），而 <code>https?://</code> 可以表示 <code>http://</code> 或 <code>https://</code>[^1] 即可。</p>
+<p>下图是是对 1Blocker 完整拦截一个域名规则的一些解释，可以帮助理解和编写自己的规则。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/regexp.png" alt="regexp"></p>
+<h3 id="白名单"><a href="# 白名单" class="headerlink" title="白名单"></a>白名单 </h3><p> 虽然随着拦截插件的日渐盛行，越来越多的网站已经开始调整广告的呈现形式，或将移动业务重心转移至原生应用。但是，仍有很多独立站点依然依靠流量广告来作为收入来源。针对这些站点，1Blocker 提供了一键设置白名单，通过 Safari 的 Share Sheets 呼出 1Blocker 即可「拉白」当前域名。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/whitelist.jpg" alt="whitelist"></p>
+<h2 id="真正强大的 -Mac- 版"><a href="# 真正强大的 -Mac- 版" class="headerlink" title="真正强大的 Mac 版"></a>真正强大的 Mac 版 </h2><p> 不管 1Blocker for iOS 有多么令人兴奋的功能，真正能发挥其所有功能的还当属 Mac 版。前者最大的短板在于：不管在可用性上做的多好，都始终回避不了内容拦截的本质——<strong>你需要首先能「找到」要拦截的内容，才能制定拦截规则</strong>。</p>
+<h3 id="更彻底的元素拦截"><a href="# 更彻底的元素拦截" class="headerlink" title="更彻底的元素拦截"></a>更彻底的元素拦截 </h3><p> 和 iOS 版一样，1Blocker for Mac 也有页面元素拦截的可视化编辑器，但是借助「网页检查器」这个利器，可以实现更为彻底的元素拦截。</p>
+<p>在 Mac 的 Safari 上，通过右键菜单>检查元素，你可以打开「网页检查器」查看页面上任意元素的代码，以及站点加载的所有字体、脚本、样式表等资源文件。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/inspect_screenshot1.png" alt="inspect_screenshot1"></p>
+<p>在使用 1Blocker for iOS 屏蔽淘宝手机站广告横栏时，你会发现并不能有效的拦截。这是因为像 1Blocker 这种拦截器，在选择元素的时候，使用的是元素的 <code>id</code> 或 <code>class</code> 这类简单选择器。</p>
+<p>这些选择器通常能做到唯一对应，但淘宝这个横栏由于是 JS 生成的，<code>id</code> 和 <code>class</code> 的值每次都不同。虽然你生成的规则能成功拦截这个 <code>id=o12dfs</code> 的元素，但是再次刷新后，它又变成了 <code>id=idfd23</code>。这就导致你之前制定的规则完全无效。</p>
+<p>好在 1Blocker  <strong>支持所有被 WebKit 所支持高级 CSS 选择器 </strong>，也就是说可以运用一些高级语法来更精准的选择元素。比如通过分析源码发现淘宝的这个元素标签有一个行内样式，于是就可以通过<code> 标签 [属性]</code> 这种形式来精准匹配这个元素：<code>div[style=&quot;display: block; position: relative; z-index: 0;&quot;]</code>。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/inspect_screenshot2.jpg" alt="inspect_screenshot2"></p>
+<p>想要了解更多关于 CSS Leve 4 选择器 请参考 w3c 的 <a href="https://www.w3.org/TR/selectors4/" target="_blank" rel="external">文档</a>。另外，获取元素路径还有个便捷的办法——右击元素标签，选择「拷贝选择器路径」即可。</p>
+<p><img src="http://7xrasx.com1.z0.glb.clouddn.com/inspect_screenshot3.png" alt="inspect_screenshot3"></p>
+<h3 id="iCloud- 同步和导入规则包"><a href="#iCloud- 同步和导入规则包" class="headerlink" title="iCloud 同步和导入规则包"></a>iCloud 同步和导入规则包</h3><p>1Blocker 另一个令人难以割舍的原因在于，所有你修改和建立的拦截规则或白名单，都能通过 iCloud 实时同步。想象一下你在 Mac 上建立了一堆复杂的拦截规则，低头拿起 iPhone 就能访问经拦截后的网页的那种酸爽！</p>
+<p>此外，在 Mac 上你所有的自建规则组，除了可以通过 iCloud 同步外，还能导出成后缀名为 <code>.1blockpkg</code> 的 JSON 格式文件。这样就可以将自己的规则组导出分享给别人，而接收方只要在 Mac 或 iOS 设备上打开文件就能导入你的规则包。</p>
+<p>这里 <strong> 分享一个我从 AdBlock 著名的规则列表 EasyList China 中移植过来规则包 </strong>，为了保证普遍适用性，只移植了通用拦截规则部分，欢迎从 GitHub 上 <a href="#"> 下载</a> 或者 <code>fork</code> 走。 </p>
+<h2 id="问题和不足"><a href="# 问题和不足" class="headerlink" title="问题和不足"></a>问题和不足 </h2><p>1Blocker 当然也还存在不少问题，首先它所面临最根本的挑战是：<strong> 我们真的需要一个 iOS 设备上的网页内容拦截器吗？</strong>既然我们在使用这些设备时，有超过 90% 的时间都是花在原生应用上，为余下的百分之几时间提供一个复杂的体验优化方案，怎么看都不向是个明智的决定。</p>
+<p>试问，<strong>有多少影响阅读体验的广告是不能通过「阅读模式」一键解决的呢？</strong></p>
+<p>其次，亟需解决的还有本地化的问题。这里的本地化并非指简单的用户界面翻译，而是拦截规则的本地化。虽然它对于美国多数网站的优化拦截是到位的，但到了国内，最终效果与 Adblock 或 uBlock 等老牌拦截应用还有不小的差距。</p>
+<p>1Blocker 并没有一个活跃的社区，单靠用户反馈、开发者补足规则的形式，显然不足以应对全部状况。虽然 1Blocker 提供足够强大的自定义拦截工具，但完善拦截规则是一件需要投入大量学习成本和时间成本的事。</p>
+<p>而普通用户对拦截应用好坏的评判，并非基于是否提供了各种自定义工具，而是 <strong> 看它能否一次安装就一劳永逸，默默地做好拦截工作</strong>。而对于 Power user 们来说，如果能精准地定位到影响网页加载的广告或脚本，把它们写进 Surge 这类全局代理软件的 Reject 列表里，难道不是一件适用面更广的事么？</p>
+<h2 id="尾巴"><a href="# 尾巴" class="headerlink" title="尾巴"></a>尾巴 </h2><p> 虽然我还挺为 1Blocker 的产品定位担忧的，但对于苹果「全家桶」用户们来说，它仍然不失为目前最为好用的 Safari 内容拦截器。<strong>尤其是当「好用」这个词不作为形容词，而作为动词时。</strong></p>
+<p>现在你可以在 App Store <a href="https://itunes.apple.com/app/id1025729002" target="_blank" rel="external">免费下载</a> 1Blocker for iOS，但免费版本仅可开启一组内置规则组。多组规则、元素屏蔽、白名单和 iCloud 同步等高级功能，需要 30 元内购解锁。Mac 版售价 68 元，购买后可使用全部功能。</p>
+<p>[^1]: 1Blocker 拦截规则中 / 不用转义。</p>
+]]></content:encoded>
+      
+      <comments>https://zoomyale.com/2017/1blocker/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>重装 Mac 后，我第一时间装了这 83 个 App</title>
@@ -793,7 +848,7 @@
 <h3 id="2-2-HTML"><a href="#2-2-HTML" class="headerlink" title="2.2 HTML"></a>2.2 HTML</h3><p>HTML 是一种网页标记语言。它主要是利用标签来告诉浏览器，标签之间的东西是什么——是标题、段落、图片还是链接等。浏览器则会根据 HTML 标签，相应地作出显示。下面举几个栗子：</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>这是 1 级标题 <span class="tag">&lt;/<span class="name">h1</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span> 这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">“这是链接地址”</span>&gt;</span> 这是链接的文字<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">“这是图片的路径或链接地址”/</span>&gt;</span></div></pre></td></tr></table></figure>
 <h3 id="2-3-CSS"><a href="#2-3-CSS" class="headerlink" title="2.3 CSS"></a>2.3 CSS</h3><p>CSS 中文名叫做「层叠样式表」，从名字里就可以看出，它是一种声明样式的文档。我们可以通过链接外部 css 文档，或者将样式写在 HTML 文档的 <code>&lt;head&gt;&lt;/head&gt;</code> 标签中，抑或在 HTML 标签中内嵌属性 <code>style=&quot;&quot;</code> 来实现对样式的定义。举个例子，我们要让 <code>&lt;p&gt; 这个段落 &lt;/p&gt;</code> 的背景变成灰色，就可以用以下三种方法实现：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* 方法一：直接用 style 属性 */</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">“background-color:grey;”</span>&gt;</span>这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法二：在 HTML 文档的<span class="tag">&lt;<span class="name">head</span>&gt;</span> 标签中声明（会应用于页面中所有的 <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> 段落）*/</div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">	<span class="selector-tag">p</span>&#123;</div><div class="line">	<span class="attribute">background-color</span>:grey;</div><div class="line">	&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法三：通过外链实现 */</div><div class="line">// 另建一个 css 文档，在其中写上方法二中 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml"> 标签间的内容，再在 HTML 文档中作如下声明</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">“css 文档的路径”</span> <span class="attr">rel</span>=<span class="string">“stylesheet</span>"<span class="attr">type</span>=<span class="string">“text/css”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">/* 方法一：直接用 style 属性 */</div><div class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">“background-color:grey;”</span>&gt;</span>这是段落 <span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法二：在 HTML 文档的<span class="tag">&lt;<span class="name">head</span>&gt;</span> 标签中声明（会应用于页面中所有的 <span class="tag">&lt;<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">p</span>&gt;</span> 段落）*/</div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">	p&#123;</div><div class="line">	background-color:grey;</div><div class="line">	&#125;</div><div class="line">  <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line">/* 方法三：通过外链实现 */</div><div class="line">// 另建一个 css 文档，在其中写上方法二中 <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="xml"> 标签间的内容，再在 HTML 文档中作如下声明</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">“css 文档的路径”</span> <span class="attr">rel</span>=<span class="string">“stylesheet</span>"<span class="attr">type</span>=<span class="string">“text/css”</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div></pre></td></tr></table></figure>
 <h2 id="3- 网页上的框"><a href="#3- 网页上的框" class="headerlink" title="3 网页上的框"></a>3 网页上的框 </h2><p> 代码语言只是前端开发实现的基础工具，要还原一个网页视觉稿，你还需要掌握以下的方法，并且记住——网页上的所有东西都盛放在框中。</p>
 <h3 id="3-1-Chrome 开发者工具"><a href="#3-1-Chrome 开发者工具" class="headerlink" title="3.1 Chrome 开发者工具"></a>3.1 Chrome 开发者工具</h3><p>Chrome 开发者工具是对前端开发最有用的神器，对，没有之一。它不仅可以让你看到网页的源码，每个元素的样式、构成，还能让你编辑源码并且实时查看页面效果。</p>
 <p>你可以在 Chrome 的菜单栏中，点击 <code> 更多工具 &gt; 开发者工具 </code> 打开开发者工具，也可以在网页任意位置右击，点击 <code> 检查 </code> 打开。打开后，可以同时看到网页页面和开发者工具窗口。其中开发者工具左半边是 HTML 的源码，里面有各种各样的元素，右边显示的是你在左半边选择的元素的样式。</p>
