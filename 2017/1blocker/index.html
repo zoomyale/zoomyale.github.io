@@ -13,7 +13,7 @@
 
     <title>
         
-          1Blocker，可能是目前最好用的 Safari 内容拦截应用 v2.0 - 也而的博客 | Yale&#39;s Blog
+          1Blocker，可能是目前最好用的 Safari 内容拦截应用 - 也而的博客 | Yale&#39;s Blog
         
     </title>
 
@@ -87,14 +87,14 @@
 
                         
                         <li>
-                            <a href="/archive/">Archives</a>
+                            <a href="/about/">About</a>
                         </li>
                         
                     
 
                         
                         <li>
-                            <a href="/about/">About</a>
+                            <a href="/archive/">Archives</a>
                         </li>
                         
                     
@@ -167,7 +167,7 @@
                           <a class="tag" href="/tags/#安利" title="安利">安利</a>
                         
                     </div>
-                    <h1>1Blocker，可能是目前最好用的 Safari 内容拦截应用 v2.0</h1>
+                    <h1>1Blocker，可能是目前最好用的 Safari 内容拦截应用</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted on
@@ -203,7 +203,7 @@
 <p><img src="http://7xrasx.com1.z0.glb.clouddn.com/illustrate0.png" alt="illustrate0"></p>
 <p>虽然该功能还是 Beta 版，但是开发者已经做了不少可用性上的优化。比如由于页面元素的点选不可能很精准，所以提供了 <code>Narrow</code> 和 <code>Expand</code> 两个选项供你调整选区。</p>
 <h3 id="自定义 -URL- 和 -Cookies- 拦截"><a href="# 自定义 -URL- 和 -Cookies- 拦截" class="headerlink" title="自定义 URL 和 Cookies 拦截"></a>自定义 URL 和 Cookies 拦截 </h3><p> 除了隐藏元素，1Blocker 还可以添加自定义 URL 拦截，以及针对某些域名屏蔽 Cookies。声明这些规则时，需要用到「正则表达式」——一些用来描述字符规律的符号。</p>
-<p>如果你不熟悉正则表达式也不要紧，首先 App 中有一些符号的基本使用说明。另外，由于 Safari 内容拦截本身就反对使用过于复杂的正则表达式，所以你大概只需要知道要用 <code>\.</code> 来表示 <code>.</code>，<code>.*</code> 可以表示 URL 中的任意字符（或者没有字符），而 <code>https?://</code> 可以表示 <code>http://</code> 或 <code>https://</code>[^1] 即可。</p>
+<p>如果你不熟悉正则表达式也不要紧，首先 App 中有一些符号的基本使用说明。另外，由于 Safari 内容拦截本身就反对使用过于复杂的正则表达式，所以你大概只需要知道要用 <code>\.</code> 来表示 <code>.</code>，<code>.*</code> 可以表示 URL 中的任意字符（或者没有字符），而 <code>https?://</code> 可以表示 <code>http://</code> 或 <code>https://</code>（ 1Blocker 拦截规则中 <code>/</code> 不用转义） 即可。</p>
 <p>下图是是对 1Blocker 完整拦截一个域名规则的一些解释，可以帮助理解和编写自己的规则。</p>
 <p><img src="http://7xrasx.com1.z0.glb.clouddn.com/regexp.png" alt="regexp"></p>
 <h3 id="白名单"><a href="# 白名单" class="headerlink" title="白名单"></a>白名单 </h3><p> 虽然随着拦截插件的日渐盛行，越来越多的网站已经开始调整广告的呈现形式，或将移动业务重心转移至原生应用。但是，仍有很多独立站点依然依靠流量广告来作为收入来源。针对这些站点，1Blocker 提供了一键设置白名单，通过 Safari 的 Share Sheets 呼出 1Blocker 即可「拉白」当前域名。</p>
@@ -220,7 +220,7 @@
 <p><img src="http://7xrasx.com1.z0.glb.clouddn.com/inspect_screenshot3.png" alt="inspect_screenshot3"></p>
 <h3 id="iCloud- 同步和导入规则包"><a href="#iCloud- 同步和导入规则包" class="headerlink" title="iCloud 同步和导入规则包"></a>iCloud 同步和导入规则包</h3><p>1Blocker 另一个令人难以割舍的原因在于，所有你修改和建立的拦截规则或白名单，都能通过 iCloud 实时同步。想象一下你在 Mac 上建立了一堆复杂的拦截规则，低头拿起 iPhone 就能访问经拦截后的网页的那种酸爽！</p>
 <p>此外，在 Mac 上你所有的自建规则组，除了可以通过 iCloud 同步外，还能导出成后缀名为 <code>.1blockpkg</code> 的 JSON 格式文件。这样就可以将自己的规则组导出分享给别人，而接收方只要在 Mac 或 iOS 设备上打开文件就能导入你的规则包。</p>
-<p>这里 <strong> 分享一个我从 AdBlock 著名的规则列表 EasyList China 中移植过来规则包 </strong>，为了保证普遍适用性，只移植了通用拦截规则部分，欢迎从 GitHub 上 <a href="#"> 下载</a> 或者 <code>fork</code> 走。 </p>
+<p>这里 <strong> 分享一个我从 AdBlock 著名的规则列表 EasyList China 中移植过来规则包 </strong>，为了保证普遍适用性，只移植了通用拦截规则部分，欢迎从 GitHub 上 <a href="#"> 下载</a> 或者 fork 走。 </p>
 <h2 id="问题和不足"><a href="# 问题和不足" class="headerlink" title="问题和不足"></a>问题和不足 </h2><p>1Blocker 当然也还存在不少问题，首先它所面临最根本的挑战是：<strong> 我们真的需要一个 iOS 设备上的网页内容拦截器吗？</strong>既然我们在使用这些设备时，有超过 90% 的时间都是花在原生应用上，为余下的百分之几时间提供一个复杂的体验优化方案，怎么看都不向是个明智的决定。</p>
 <p>试问，<strong>有多少影响阅读体验的广告是不能通过「阅读模式」一键解决的呢？</strong></p>
 <p>其次，亟需解决的还有本地化的问题。这里的本地化并非指简单的用户界面翻译，而是拦截规则的本地化。虽然它对于美国多数网站的优化拦截是到位的，但到了国内，最终效果与 Adblock 或 uBlock 等老牌拦截应用还有不小的差距。</p>
@@ -228,7 +228,6 @@
 <p>而普通用户对拦截应用好坏的评判，并非基于是否提供了各种自定义工具，而是 <strong> 看它能否一次安装就一劳永逸，默默地做好拦截工作</strong>。而对于 Power user 们来说，如果能精准地定位到影响网页加载的广告或脚本，把它们写进 Surge 这类全局代理软件的 Reject 列表里，难道不是一件适用面更广的事么？</p>
 <h2 id="尾巴"><a href="# 尾巴" class="headerlink" title="尾巴"></a>尾巴 </h2><p> 虽然我还挺为 1Blocker 的产品定位担忧的，但对于苹果「全家桶」用户们来说，它仍然不失为目前最为好用的 Safari 内容拦截器。<strong>尤其是当「好用」这个词不作为形容词，而作为动词时。</strong></p>
 <p>现在你可以在 App Store <a href="https://itunes.apple.com/app/id1025729002" target="_blank" rel="external">免费下载</a> 1Blocker for iOS，但免费版本仅可开启一组内置规则组。多组规则、元素屏蔽、白名单和 iCloud 同步等高级功能，需要 30 元内购解锁。Mac 版售价 68 元，购买后可使用全部功能。</p>
-<p>[^1]: 1Blocker 拦截规则中 / 不用转义。</p>
 
 
                 <hr>
@@ -378,6 +377,15 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <ul class="list-inline text-center">
                 
+                    <li>
+                        <a href="/rss2.xml">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-rss fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                
                 
                     <li>
                         <a target="_blank" href="https://twitter.com/zoomyale">
@@ -388,15 +396,6 @@
                         </a>
                     </li>
                 
-                
-                    <li>
-                        <a target="_blank" href="https://www.zhihu.com/people/zoomyale">
-                            <span class="fa-stack fa-lg">
-                                <i class="fa fa-circle fa-stack-2x"></i>
-                                <i class="fa  fa-stack-1x fa-inverse">知</i>
-                            </span>
-                        </a>
-                    </li>
                 
 
                 
